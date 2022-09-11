@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios en HTML</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    
+    <form class="form">
+        <h1 class="form__title">Mascota Feliz</h1>
+        <h2 class="form__paragraph">Registro Nuevo Propietario</h2>
+        <p class="form__paragraph">¿Ya tienes una cuenta? <a href="form_link">Entra aqui</a></p>
+
+        <div class="form__container">
+            <div class="form__group">
+                <input type="text" id="id" name="id" class="form__input" placeholder=" " required="true"/>
+                <label for="id" class="form_label">Cédula:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="text" id="nombre" name="nombre" class="form__input" placeholder=" " required="true"/>
+                <label for="nombre" class="form_label">Nombre:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="text" id="apellido" name="apellido" class="form__input" placeholder=" " required="true"/>
+                <label for="apellido" class="form_label">Apellido:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="text" id="direccion" name="direccion" class="form__input" placeholder=" " required="true"/>
+                <label for="direccion" class="form_label">Dirección:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="text" id="telefono" name="telefono" class="form__input" placeholder=" " required="true"/>
+                <label for="telefono" class="form_label">Telefono:</label>
+                <span class="form__line"></span>
+            </div>
+            <div class="form__group">
+                <input type="text" id="email" name="email" class="form__input" placeholder=" " required="true"/>
+                <label for="email" class="form_label">Email:</label>
+                <span class="form__line"></span>
+            </div>
+            <input type="submit" class="form_submit" value="Registrar">         
+        </div>
+
+    </form>
+    <p></p>
+</body>
+</html>
