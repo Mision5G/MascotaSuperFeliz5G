@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using MascotaFeliz.App.Dominio;
 using MascotaFeliz.App.Persistencia;
 using System.Collections.Generic;
@@ -42,16 +42,15 @@ namespace MascotaFeliz.App.Consola
            //BuscarMascota(1);
            //EditarMascota(6);
             //EliminarMascota(1);
-            //AsignarVeterinario();
-            //AsignarDueno();
-            //AsignarHistoria();
 
 
             //AddHistoria();
-           //AsignarVisitaPyP(1);
+            //AsignarVisitaPyP();
             
 
-           // AddVisitaPyP(); 
+            //AddVisitaPyP(); 
+            //EliminarVisitaPyP(1);
+            //EditarVisitaPyP(3);
 
             
 
@@ -94,12 +93,12 @@ namespace MascotaFeliz.App.Consola
             var VisitaPyP= new VisitaPyP
             {
                 FechaVisita= DateTime.Now,
-                Temperatura = 39.2F,
-                Peso=2.3F,
-                FrecuenciaCardiaca=210.4F,
-                FrecuenciaRespiratoria=45F,
-                EstadoAnimo= "Deprimido",
-                Recomendaciones="Más vegetales y menos comida procesada"
+                Temperatura = 32.2F,
+                Peso=2.7F,
+                FrecuenciaCardiaca=300.4F,
+                FrecuenciaRespiratoria=48F,
+                EstadoAnimo= "Contento",
+                Recomendaciones="Más paseos"
             };
             _repoVisitaPyP.AddVisitaPyP(VisitaPyP);
 
@@ -141,33 +140,11 @@ namespace MascotaFeliz.App.Consola
             }
         }
 
-       private static void AsignarVeterinario()
+       /* private static void AsignarVeterinario()
         {
-            var veterinario = _repoMascota.AsignarVeterinario(2, 5);
+            var veterinario = _repoMascota.AsignarVeterinario(1, 15);
             Console.WriteLine(veterinario.Nombres + " " + veterinario.Apellidos);
-        }
-
-        private static void AsignarDueno()
-        {
-            var dueno = _repoMascota.AsignarDueno(2, 4);
-            Console.WriteLine(dueno.Nombres + " " + dueno.Apellidos);
-        }
-
-        private static void AsignarHistoria()
-        {
-            var historia = _repoMascota.AsignarHistoria(2, 1);
-            Console.WriteLine(historia.FechaInicial);
-        }
-
-
-
-
-
-
-
-
-
-
+        }*/
 
         //BUSCAR POR ID
 
@@ -285,6 +262,17 @@ namespace MascotaFeliz.App.Consola
             mascotaE.Raza = "Criolla";
             _repoMascota.UpdateMascota(mascotaE);
         }
+        private static void EditarVisitaPyP(int idVisitaPyP){
+            var vis = _repoVisitaPyP.GetVisitaPyP(idVisitaPyP);
+            vis.FechaVisita = new DateTime(2022, 08, 19);
+            vis.Temperatura = 31.2F;
+            vis.Peso=4.7F;
+            vis.FrecuenciaCardiaca=198.4F;
+            vis.FrecuenciaRespiratoria=39F;
+            vis.EstadoAnimo= "Contento";
+            vis.Recomendaciones="Más paseos";
+            _repoVisitaPyP.UpdateVisitaPyP(vis);
+        }
 
 //ELIMINAR
 
@@ -298,6 +286,9 @@ namespace MascotaFeliz.App.Consola
         }  
         private static void EliminarMascota(int idMascota){
             _repoMascota.DeleteMascota(idMascota);
+        } 
+        private static void EliminarVisitaPyP(int idVisitaPyP){
+            _repoVisitaPyP.DeleteVisitaPyP(idVisitaPyP);
         } 
         
     }
