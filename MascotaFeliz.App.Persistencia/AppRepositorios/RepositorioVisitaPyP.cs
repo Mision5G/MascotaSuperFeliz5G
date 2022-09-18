@@ -27,5 +27,30 @@ namespace MascotaFeliz.App.Persistencia
             _appContext.SaveChanges();
             return VisitaPyPAdicionada.Entity;
         }
-    }
+
+        public void DeleteVisitaPyP(int idVisitaPyP)
+        {
+            var VisitaPyPEncontrada = _appContext.VisitasPyP.FirstOrDefault(v=> v.Id == idVisitaPyP);
+            if (VisitaPyPEncontrada == null)
+                return;
+            _appContext.VisitasPyP.Remove(VisitaPyPEncontrada);
+            _appContext.SaveChanges();
+        }
+        public VisitaPyP GetVisitaPyP(int idVisitaPyP)
+        {
+            return _appContext.VisitasPyP.FirstOrDefault(v => v.Id == idVisitaPyP);
+        }
+
+        public VisitaPyP UpdateVisitaPyP(VisitaPyP visitaPyP)
+        {
+            var VisitaPyPEncontrada = _appContext.VisitasPyP.FirstOrDefault(v => v.Id == visitaPyP.Id);
+            if (VisitaPyPEncontrada != null)
+            {
+                VisitaPyPEncontrada.FechaVisita= visitaPyP.FechaVisita;
+                             
+                _appContext.SaveChanges();
+            }
+            return VisitaPyPEncontrada;
+        }  
+ }
 }
