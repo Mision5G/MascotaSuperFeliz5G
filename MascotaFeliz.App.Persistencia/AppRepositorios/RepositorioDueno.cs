@@ -55,11 +55,12 @@ namespace MascotaFeliz.App.Persistencia
             }
             return duenos;
         }
-
         public IEnumerable<Dueno> GetAllDuenos_()
         {
             return _appContext.Duenos;
         }
+
+        
 
         public Dueno GetDueno(int idDueno)
         {
@@ -71,6 +72,7 @@ namespace MascotaFeliz.App.Persistencia
             var duenoEncontrado = _appContext.Duenos.FirstOrDefault(d => d.Id == dueno.Id);
             if (duenoEncontrado != null)
             {
+                duenoEncontrado.Cedula = dueno.Cedula;
                 duenoEncontrado.Nombres = dueno.Nombres;
                 duenoEncontrado.Apellidos = dueno.Apellidos;
                 duenoEncontrado.Direccion = dueno.Direccion;

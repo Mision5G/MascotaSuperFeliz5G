@@ -75,6 +75,7 @@ namespace MascotaFeliz.App.Persistencia
             var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(d => d.Id == veterinario.Id);
             if (veterinarioEncontrado != null)
             {
+                veterinarioEncontrado.Cedula = veterinario.Cedula;
                 veterinarioEncontrado.Nombres = veterinario.Nombres;
                 veterinarioEncontrado.Apellidos = veterinario.Apellidos;
                 veterinarioEncontrado.Direccion = veterinario.Direccion;

@@ -17,31 +17,53 @@ namespace MascotaFeliz.App.Consola
         static void Main(string[] args)
         {
             Console.WriteLine("Hola amigos vamos a empezar a trabajar con las tablas");
-                       
+
+
+
             //ListarDuenosFiltro();      
-            //AddDueno();
+           // AddDueno();
             //BuscarDueno(2);
+             //ListarDuenos();
+             //EditarDueno();
+             //EliminarDueno();
+
 
             //ListarVeterinariosFiltro();
             //AddVeterinario();
             //BuscarVeterinario(1);
-           // AddMascota();
-           ListarMascotasFiltro();
+            //EditarVet();
+            //EliminarVet();
+            //ListarVet();
+          
+
+            //AddMascota();
+           //ListarMascotasFiltro();
            //ListarMascotas();
+           //BuscarMascota(1);
+           //EditarMascota(6);
+            //EliminarMascota(1);
+            //AsignarVeterinario();
+            //AsignarDueno();
+            //AsignarHistoria();
+
+
             //AddHistoria();
-            //AddVisitaPyP();
-            //ListarDuenos();
+           //AsignarVisitaPyP(1);
+            
+
+           // AddVisitaPyP(); 
+
             
 
         }
-
+//Todos los Adds
         private static void AddDueno()
         {
             var dueno = new Dueno
             {
-                Cedula = "6789",
-                Nombres = "Juan",
-                Apellidos = "Bautista", 
+                Cedula = "6632231",
+                Nombres = "Sofía",
+                Apellidos = "Cardenas", 
                 Direccion = "Calle 10 # 1-49",
                 Telefono = "45644366",
                 Correo = "juanchitomayor@gmail.com"
@@ -51,8 +73,8 @@ namespace MascotaFeliz.App.Consola
         private static void AddMascota() {
             var Mascota = new Mascota
             {
-                Nombre = "Mulán",
-                Color = "Café con negro", 
+                Nombre = "Morgan",
+                Color = "Café", 
                 Especie = "Felino",
                 Raza = "Criolla"
             };
@@ -87,15 +109,67 @@ namespace MascotaFeliz.App.Consola
         {
             var veterinario = new Veterinario
             {
-                Cedula = "33448",
-                Nombres = "Peter",
-                Apellidos = "Pan", 
+                Cedula = "348928",
+                Nombres = "Azul",
+                Apellidos = "Consuelo", 
                 Direccion = "Transversal 9 # 17A-155",
                 Telefono = "3363365858",
-                TarjetaProfesional = "TP52546"
+                TarjetaProfesional = "TP87499"
             };
             _repoVeterinario.AddVeterinario(veterinario);
         }
+
+
+        //Asignar visita PyP, Dueños y demás
+
+        private static void AsignarVisitaPyP(int idHistoria)
+        {
+            var historia = _repoHistoria.GetHistoria(idHistoria);
+            if (historia != null)
+            {
+                if (historia.VisitasPyP != null)
+                {
+                    historia.VisitasPyP.Add(new VisitaPyP { FechaVisita = new DateTime(2020, 01, 01), Temperatura = 38.0F, Peso = 30.0F, FrecuenciaRespiratoria = 71.0F, FrecuenciaCardiaca = 71.0F, EstadoAnimo = "Muy cansón", CedulaVeterinario = "123", Recomendaciones = "Dieta extrema"});
+                }
+                else
+                {
+                    historia.VisitasPyP = new List<VisitaPyP>{
+                        new VisitaPyP{FechaVisita = new DateTime(2020, 01, 01), Temperatura = 38.0F, Peso = 30.0F, FrecuenciaRespiratoria = 71.0F, FrecuenciaCardiaca = 71.0F, EstadoAnimo = "Muy cansón", CedulaVeterinario = "123", Recomendaciones = "Dieta extrema" }
+                    };
+                }
+                _repoHistoria.UpdateHistoria(historia);
+            }
+        }
+
+       private static void AsignarVeterinario()
+        {
+            var veterinario = _repoMascota.AsignarVeterinario(2, 5);
+            Console.WriteLine(veterinario.Nombres + " " + veterinario.Apellidos);
+        }
+
+        private static void AsignarDueno()
+        {
+            var dueno = _repoMascota.AsignarDueno(2, 4);
+            Console.WriteLine(dueno.Nombres + " " + dueno.Apellidos);
+        }
+
+        private static void AsignarHistoria()
+        {
+            var historia = _repoMascota.AsignarHistoria(2, 1);
+            Console.WriteLine(historia.FechaInicial);
+        }
+
+
+
+
+
+
+
+
+
+
+
+        //BUSCAR POR ID
 
         private static void BuscarDueno(int idDueno)
         {
@@ -108,6 +182,21 @@ namespace MascotaFeliz.App.Consola
             var veterinario = _repoVeterinario.GetVeterinario(idVeterinario);
             Console.WriteLine(veterinario.Nombres + " " + veterinario.Apellidos);
         }
+
+        private static void BuscarMascota(int idMascota)
+        {
+            var mascotasB = _repoMascota.GetMascota(idMascota);
+            Console.WriteLine(mascotasB.Nombre + " " + mascotasB.Especie);
+        }
+       /* private static void BuscarHistoria(int idHistoria)
+        {
+            var historiaB = _repoHistoria.GetAllHistoria(idMascota);
+            Console.WriteLine(mascotasB.Nombre + " " + mascotasB.Especie);
+        }*/
+
+
+//LISTAR POR FILTRO
+
 
         private static void ListarDuenosFiltro()
         {
@@ -129,13 +218,6 @@ namespace MascotaFeliz.App.Consola
 
         }
 
-         private static void ListarMacotas(){
-            var mascotas = _repoMascota.GetAllMascotas();
-            foreach(Mascota m in mascotas){
-                Console.WriteLine(m.Nombre+ " " + m.Especie + " " +m.Color);
-            }
-        }
-
         private static void ListarVeterinariosFiltro()
         {
             var veterinariosM = _repoVeterinario.GetVeterinariosPorFiltro("e");
@@ -146,17 +228,77 @@ namespace MascotaFeliz.App.Consola
 
         }
 
+
+// LISTAR TODOS
+
+         private static void ListarMascotas(){
+            var mascotas = _repoMascota.GetAllMascotas();
+            foreach(Mascota m in mascotas){
+                Console.WriteLine(m.Nombre+ " " + m.Especie + " " +m.Color);
+            }
+        }
+
+        
+
         private static void ListarDuenos(){
             var duenos = _repoDueno.GetAllDuenos();
             foreach(Dueno d in duenos){
                 Console.WriteLine(d.Nombres+" "+d.Apellidos+" "+d.Cedula);
             }
+        } 
+
+        private static void ListarVet(){
+            var vet = _repoVeterinario.GetAllVeterinarios();
+            foreach(Veterinario v in vet){
+                Console.WriteLine(v.Nombres+" "+v.Apellidos+" "+v.TarjetaProfesional);
+            }
         }
 
-       
+//EDITAR
+        private static void EditarDueno(int idDueno){
+            var dueno = _repoDueno.GetDueno(idDueno);
+            dueno.Cedula = "10289957";
+            dueno.Nombres = "Pacho";
+            dueno.Apellidos = "El Matematico"; 
+            dueno.Direccion = "Trasversal Recta 398";                
+            dueno.Telefono = "559662";
+            dueno.Correo = "Francis_M@gmail.com";
+            _repoDueno.UpdateDueno(dueno);
+        }
+
+        private static void EditarVet(int idVeterinario){
+            var vet = _repoVeterinario.GetVeterinario(idVeterinario);
+            vet.Cedula = "2123743";
+            vet.Nombres = "Oscar";
+            vet.Apellidos = "Salamanca"; 
+            vet.Direccion = "El pais de las maravillas";
+            vet.Telefono = "32743822";
+            vet.TarjetaProfesional = "TP9933";
+            _repoVeterinario.UpdateVeterinario(vet);
+        }
+
+        private static void EditarMascota(int idMascota){
+            var mascotaE = _repoMascota.GetMascota(idMascota);
+            mascotaE.Nombre = "Mengana";
+            mascotaE.Color = "Café"; 
+            mascotaE.Especie = "Felino";
+            mascotaE.Raza = "Criolla";
+            _repoMascota.UpdateMascota(mascotaE);
+        }
+
+//ELIMINAR
 
 
-        
+        private static void EliminarDueno(int idDueno){
+            _repoDueno.DeleteDueno(idDueno);
+        }  
+
+        private static void EliminarVet(int idVeterinario){
+            _repoVeterinario.DeleteVeterinario(idVeterinario);
+        }  
+        private static void EliminarMascota(int idMascota){
+            _repoMascota.DeleteMascota(idMascota);
+        } 
         
     }
 }
