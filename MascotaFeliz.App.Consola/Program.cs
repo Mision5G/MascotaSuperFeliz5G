@@ -64,7 +64,7 @@ namespace MascotaFeliz.App.Consola
                 Nombres = "William",
                 Apellidos = "Rincon", 
                 Direccion = "Calle 30 # 19B-31",
-                Telefono = "3103102211",
+                Telefono = "3103102200",
                 Correo = "willy@gmail.com"
             };
             _repoDueno.AddDueno(dueno);
