@@ -61,7 +61,7 @@ namespace MascotaFeliz.App.Consola
             var dueno = new Dueno
             {
                 Cedula = "6632231",
-                Nombres = "William",
+                Nombres = "Daniela",
                 Apellidos = "Rincon", 
                 Direccion = "Calle 30 # 19B-31",
                 Telefono = "3103102200",
