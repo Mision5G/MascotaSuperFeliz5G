@@ -29,7 +29,7 @@ namespace MascotaFeliz.App.Consola
 
 
             //ListarVeterinariosFiltro();
-            AddVeterinario();
+            //AddVeterinario();
             //BuscarVeterinario(1);
             //EditarVet();
             //EliminarVet();
@@ -44,7 +44,7 @@ namespace MascotaFeliz.App.Consola
             //EliminarMascota(1);
 
 
-            //AddHistoria();
+            AddHistoria();
             //AsignarVisitaPyP();
             
 
@@ -151,7 +151,7 @@ namespace MascotaFeliz.App.Consola
         private static void BuscarDueno(int idDueno)
         {
             var dueno = _repoDueno.GetDueno(idDueno);
-            Console.WriteLine(dueno.Nombres + " " + dueno.Apellidos);
+            Console.WriteLine(dueno.Cedula + " " + dueno.Nombres + " " + dueno.Apellidos + " " + dueno.Direccion + " " + + dueno.Telefono + " ");
         }
 
         private static void BuscarVeterinario(int idVeterinario)
