@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MascotaFeliz.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20220909115050_Inicial")]
+    [Migration("20220919140217_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -21,7 +21,7 @@ namespace MascotaFeliz.App.Consola
 
 
             //ListarDuenosFiltro();      
-           // AddDueno();
+            AddDueno();
             //BuscarDueno(2);
              //ListarDuenos();
              //EditarDueno();
