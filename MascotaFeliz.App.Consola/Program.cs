@@ -21,7 +21,7 @@ namespace MascotaFeliz.App.Consola
 
 
             //ListarDuenosFiltro();      
-            AddDueno();
+            //AddDueno();
             //BuscarDueno(2);
              //ListarDuenos();
              //EditarDueno();
@@ -29,7 +29,7 @@ namespace MascotaFeliz.App.Consola
 
 
             //ListarVeterinariosFiltro();
-            //AddVeterinario();
+            AddVeterinario();
             //BuscarVeterinario(1);
             //EditarVet();
             //EliminarVet();
