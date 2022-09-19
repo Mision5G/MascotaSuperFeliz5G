@@ -44,7 +44,7 @@ namespace MascotaFeliz.App.Consola
             //EliminarMascota(1);
 
 
-            AddHistoria();
+            //AddHistoria();
             //AsignarVisitaPyP();
             
 
