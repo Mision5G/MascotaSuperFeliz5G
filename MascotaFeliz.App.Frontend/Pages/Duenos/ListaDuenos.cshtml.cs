@@ -14,6 +14,8 @@ namespace MascotaFeliz.App.Frontend.Pages
         private readonly IRepositorioDueno _repoDueno;
         public IEnumerable<Dueno> listaDuenos {get;set;}
         public IEnumerable<Dueno> listaDuenosFiltro {get;set;}
+        public string filtro;
+        
         
         public ListaDuenosModel()
 
@@ -28,32 +30,10 @@ namespace MascotaFeliz.App.Frontend.Pages
             listaDuenos = _repoDueno.GetAllDuenos();
         }
 
-       
-
-        public IActionResult OnGet(string? duenoCedula)
-            {
-                if (duenoCedula != null)
-                {
-                   listaDuenosFiltro = _repoDueno.GetDuenosPorFiltro(duenoCedula); 
-                }
-                else{
-                    listaDuenos = _repoDueno.GetAllDuenos();
-                }
-                if (listaDuenosFiltro == null)
-                {
-                    return RedirectToPage("./NotFound");
-                }
-                else
-                    return Page();
-
-                
-                
-            }
-                
-           
+        public void OnGetFiltro()
+        {  
+            listaDuenosFiltro = _repoDueno.GetDuenosPorFiltro(filtro);
+        }
+  
     }
-
-        
-        
 }
-

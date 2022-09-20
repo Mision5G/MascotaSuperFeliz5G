@@ -4,53 +4,19 @@
 
 }
 <h1>Listado de propietarios</h1>
-
-<form action="/Read" method="get">
-<label for="cedula">Cédula del dueño</label>
-<input type="text" name="cedula"/>
-
-<button type="submit">Buscar dueño</button>
-</form>
-
-
-
-<table class="Table">
-
-@foreach (var dueno in Model.listaDuenosFiltro)
-
-{
-
-     <tr>
-
-        <td> @dueno.Cedula</td>
-        <td> @dueno.Nombres</td> 
-        <td> @dueno.Apellidos</td>    
-
-       @* <td> 
-            <a class= "btn btn-primary table-btn" asp-page=".\DetalleDuenos" asp-route-duenoId="@dueno.Id">
-                Detalle Dueno
-            </a>
-        </td>
-        <td>
-            <a class="btn btn-primary table-btn" asp-page="./EditarDuenos" asp-route-duenoId="@dueno.Id">
-                    Editar Dueno
-            </a>
-        </td>*@
-
+<table class="Table" id="tbl_duenos">
+<thead>
+    <tr>
+    <th>Cedula</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Detalles</th>
+    <th>Editar</th>
     </tr>
-
-}
-</table>
-
-
-
-<table class="Table">
-
+</thead>
+<tbody>
 @foreach (var dueno in Model.listaDuenos)
 {
-    
-    
-    
     <tr>
 
         <td> @dueno.Cedula</td>
@@ -70,7 +36,6 @@
 
     </tr>
 }
+</tbody>
 </table>
 <a class = "btn btn-primary table-btn" asp-page="./EditarDuenos" class="btn-default">Adicionar Dueño</a>
-    
-
