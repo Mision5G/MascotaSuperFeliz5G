@@ -172,3 +172,6 @@ C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.
 C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\DetalleVeterinario.cshtml.g.cs
 C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\EditarVeterinario.cshtml.g.cs
 C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\ListadoVeterinario.cshtml.g.cs
+C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\DetalleMascotas.cshtml.g.cs
+C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\EditarMascotas.cshtml.g.cs
+C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\HistoriaMascotas.cshtml.g.cs

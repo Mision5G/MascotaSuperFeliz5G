@@ -11,10 +11,10 @@ namespace MascotaFeliz.App.Frontend.Pages
 {
     public class ListaMascotasModel : PageModel
     {
-        private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
+        private readonly IRepositorioMascota _repoMascota;
         public IEnumerable<Mascota> listadoMascota {get;set;}
 
-        public ListadoMascotaModel()
+        public ListaMascotasModel()
         {
             this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());
         }
