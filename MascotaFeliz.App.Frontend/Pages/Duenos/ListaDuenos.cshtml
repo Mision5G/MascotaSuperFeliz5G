@@ -5,15 +5,15 @@
 }
 <h1>Listado de propietarios</h1>
 
-<div class="form__group">
-                <input type="text" id="id" name="id" class="form__input" placeholder=" " required="true"/>
-                <label for="id" class="form_label">Cédula:</label>
-                <span class="form__line"></span>
-            </div>
+<form action="/Read" method="get">
+<label for="cedula">Cédula del dueño</label>
+<input type="text" name="cedula"/>
 
-<button type="submit" class="btn btn-primary">Buscar dueño</button>
+<button type="submit">Buscar dueño</button>
+</form>
 
-@*
+
+
 <table class="Table">
 
 @foreach (var dueno in Model.listaDuenosFiltro)
@@ -35,14 +35,13 @@
             <a class="btn btn-primary table-btn" asp-page="./EditarDuenos" asp-route-duenoId="@dueno.Id">
                     Editar Dueno
             </a>
-        </td>
+        </td>*@
 
     </tr>
 
-
 }
 </table>
-*@
+
 
 
 <table class="Table">
