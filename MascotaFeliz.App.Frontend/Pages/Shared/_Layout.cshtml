@@ -63,6 +63,17 @@
         } );
     </script>
 
+    <script>
+        $(document).ready( function () {
+        $('#tbl_veterinarios').DataTable({
+             "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+            }
+        });
+        //$('#tbl_vet').DataTable();
+        } );
+    </script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
