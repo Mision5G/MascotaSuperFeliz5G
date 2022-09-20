@@ -169,3 +169,6 @@ C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.
 C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\MascotaFeliz.App.Frontend.dll
 C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\MascotaFeliz.App.Frontend.pdb
 C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\MascotaFeliz.App.Frontend.genruntimeconfig.cache
+C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\DetalleVeterinario.cshtml.g.cs
+C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\EditarVeterinario.cshtml.g.cs
+C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\ListadoVeterinario.cshtml.g.cs

@@ -14,7 +14,7 @@
     </tr>
 </thead>
 <tbody>
-@foreach (var veterinario in Model.ListadoVeterinario)
+@foreach (var veterinario in Model.listadoVeterinario  )
 {
     <tr>
 
@@ -23,12 +23,12 @@
         <td> @veterinario.Apellidos</td>    
 
         <td> 
-            <a class= "btn btn-primary table-btn" asp-page=".\DetalleVeterinario" asp-route-VeterinarioId="@deterinario.Id">
+            <a class= "btn btn-primary table-btn" asp-page=".\DetalleVeterinario" asp-route-veterinarioId="@veterinario.Id">
                 Detalle Veterinario
             </a>
         </td>
         <td>
-            <a class="btn btn-primary table-btn" asp-page="./EditarVeterinario" asp-route-VeterinarioId="@veterinario.Id">
+            <a class="btn btn-primary table-btn" asp-page="./EditarVeterinario" asp-route-veterinarioId="@veterinario.Id">
                     Editar Veterinario
             </a>
         </td>

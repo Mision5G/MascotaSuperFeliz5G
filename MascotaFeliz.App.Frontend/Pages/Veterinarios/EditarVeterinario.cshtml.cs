@@ -9,8 +9,21 @@ namespace MascotaFeliz.App.Frontend.Pages
 {
     public class EditarVeterinarioModel : PageModel
     {
-        public void OnGet()
+        private readonly IRepositorioVeterinario _repoVeterinario;
+        [BindProperty]
+        public Veterinario veterinario {get;set;}
+        
+        public EditarVeterinarioModel()
         {
+            this._repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+        }
+        
+        public IActionResult OnGet(int? veterinarioId)
+        {
+            if(veterinarioId.HasValue)
+            {
+                veterinario = _repoVeterinario.GetVeterinario()
+            }
         }
     }
 }
