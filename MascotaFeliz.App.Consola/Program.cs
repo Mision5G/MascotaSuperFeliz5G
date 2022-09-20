@@ -21,7 +21,7 @@ namespace MascotaFeliz.App.Consola
 
 
             //ListarDuenosFiltro();      
-            //AddDueno();
+            AddDueno();
             //BuscarDueno(2);
              //ListarDuenos();
              //EditarDueno();
@@ -62,7 +62,7 @@ namespace MascotaFeliz.App.Consola
             {
                 Cedula = "7324",
                 Nombres = "Daniel",
-                Apellidos = "Rincon", 
+                Apellidos = "Rosas", 
                 Direccion = "Calle 40 # 19B-31",
                 Telefono = "320111111",
                 Correo = "willy@gmail.com"
@@ -151,7 +151,7 @@ namespace MascotaFeliz.App.Consola
         private static void BuscarDueno(int idDueno)
         {
             var dueno = _repoDueno.GetDueno(idDueno);
-            Console.WriteLine(dueno.Cedula + " " + dueno.Nombres + " " + dueno.Apellidos + " " + dueno.Direccion + " " + + dueno.Telefono + " ");
+            Console.WriteLine(dueno.Cedula + " " + dueno.Nombres + " " + dueno.Apellidos + " " + dueno.Direccion + " "  + dueno.Telefono + " ");
         }
 
         private static void BuscarVeterinario(int idVeterinario)
