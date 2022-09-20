@@ -12,8 +12,17 @@ namespace MascotaFeliz.App.Frontend.Pages
     public class ListaMascotasModel : PageModel
     {
         private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
+        public IEnumerable<Mascota> listadoMascota {get;set;}
+
+        public ListadoMascotaModel()
+        {
+            this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());
+        }
+
         public void OnGet()
         {
+            listadoMascota = _repoMascota.GetAllMascotas();
         }
+        
     }
 }
