@@ -3,39 +3,75 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MascotaFeliz.App.Frontend</title>
+    <title> MascotaFeliz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/e364eafea2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/index.css" />
+    
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">MascotaFeliz.App.Frontend</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Duenos/ListaDuenos">Lista Dueños</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Mascotas/ListaMascotas">Lista de Mascotas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Veterinarios/ListadoVeterinario">Lista de Veterinarios</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+      <header>
+      <h2 class="logo">Mascotafeliz</h2>
+      <input type="checkbox" id="Check">
+      <label for="Check" class="Mostrar-menu">
+          &#8801
+      </label>
+  <nav class="menu">
+      <a href="/Index" class="boton-home">Home</a>
+      <a href="/Duenos/ListaDuenos" class="boton-Lista-dueno">Lista Dueños</a>
+      <a href="/Mascotas/ListaMascotas" class="boton-Lista-dueno">Lista de Mascotas</a>
+
+      <label for="Check" class="Esconder-menu ">
+          &#215
+      </label>
+  </nav>
+  </header>
+   <section id ="banner">
+      <div class ="Contenido-banner">
+        <h3><span>Mascota Feliz</span></h3>
+        
+      </div>
+  </section>
+<section id="personal">
+    <div>
+      <img src="./little-cute-animal-doctor-veterinarian-dog-puppy-cartoon-pet-health-care-vector.jpg" alt="">
+      <h4>Conozca nuestro pernosal</h4>
+      <a href="/Index" class="boton-veterinario">Veterinarios</a>
+    </div>
+
+</section>
+
+ <section id="iconos">   
+    <div class="contenido-iconos">
+      <div>
+        <i class="fa-solid fa-dog fa-10x"></i>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-cat fa-10x"></i>
+      </div>
+      <div id="icono-final">
+        <i class="fa-sharp fa-solid fa-shield-halved fa-10x"></i>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="redes-sociales">
+    <ul>
+      
+      <li><a href="#" class="fa fa-facebook"></a></li>
+      <li><a href="#" class="fa fa-twitter"></a></li>
+      <li><a href="#" class="fa fa-youtube"></a></li>
+      <li><a href="#" class="fa fa-linkedin"></a></li>
+    </ul>
+
+  </div>
+
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
