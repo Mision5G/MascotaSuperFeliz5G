@@ -1,0 +1,122 @@
+.barra{
+    font-family: candara, sans-serif;
+    width: 10%;
+    height: 9%;
+    position: fixed;
+    transition: .4s all;
+    z-index: 1;
+
+}
+
+.barra ul{
+    padding: 0px;
+    text-align: center;
+}
+.barra ul{
+    /*solucionar espacios no deseados*/
+    padding:0px;
+    text-align: left;
+        
+}
+.barra  li{
+    /*Velocidad de transicion del contenido*/
+    transition:all .3s;
+    list-style: none; 
+}
+
+h1{
+    
+    text-align: right;
+
+}
+
+.barra a{
+    text-decoration: none;
+    
+    font-weight: normal;
+    
+    /*La letra crece con el menu de esta manera no se va a ver como se ajusta al margen mientras crece*/
+    transition: .3s all ;
+    /*Se ocultan los elementos*/
+    font-size: 0px;
+    padding:0px;
+}
+
+.barra  h2{
+    text-align: left;
+    color:white;
+    padding: 3px;
+    padding-bottom:7px;
+   
+
+    /*Se oculta el h2*/
+    font-size:0px;   
+}
+
+.barra img{
+    padding-top: 10px;
+    padding-left: -100px;
+    width: 50px;
+    height: 50px;
+}
+.barra:hover{
+    /*Tamaño cuando el cursor señale la barra*/
+    width: 50%;
+    height: 100vh;
+    
+    /*Color*/
+    background: rgba(3, 76, 121, 0.98);
+}
+.barra:hover h2{
+    /*posicion dentro de barra del h2*/
+    padding:15px;
+    font-size: 35px;
+}
+.barra:hover a{ 
+    font-size:20px ;
+    color:white;
+    /*Se usa el display block para que el enlace respete el margin*/
+    display: block;
+    padding:20px;
+}
+.barra:hover img{
+    /*Desaparecer la imagen*/
+    height:0px;
+}
+
+.barra:hover li{
+    border-top:1px solid #03121b;
+    /*Espacios entre las lineas y el contenido*/
+    
+    width:100%;
+        
+}
+.barra:hover ul:last-of-type{
+    border-bottom: 1px solid #03121b;
+}
+
+.barra:hover a:hover{ 
+    font-size: 25px;
+    padding: 30px 0px; 
+    background: rgba(23, 78, 112, 0.98);  
+}
+
+p{
+    text-align: center;
+    font-family: candara, sans-serif;
+    font-size: 50px;
+
+}
+
+@media (min-width: 90px){
+    .barra:hover{
+    width: 25%;
+    }
+}
+body {
+    height: 550px;
+    background-image: url("Pages/super_fondo.jpg");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+  }
