@@ -13,6 +13,7 @@ namespace MascotaFeliz.App.Frontend.Pages
     {
         private readonly IRepositorioDueno _repoDueno;
         public IEnumerable<Dueno> listaDuenos {get;set;}
+        //public IEnumerable<Dueno> listaDuenosFiltro {get;set;}
         
         public ListaDuenosModel()
 
@@ -26,5 +27,13 @@ namespace MascotaFeliz.App.Frontend.Pages
         {
             listaDuenos = _repoDueno.GetAllDuenos();
         }
+
+        /*public IActionResult FiltroDuenos(string filtro)
+        {
+            listaDuenosFiltro = _repoDueno.GetDuenosPorFiltro(filtro);
+            return Page();
+        }*/
+
+        
     }
 }

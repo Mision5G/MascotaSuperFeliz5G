@@ -50,7 +50,7 @@ namespace MascotaFeliz.App.Persistencia
             {
                 if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
                 {
-                    duenos = duenos.Where(s => s.Nombres.Contains(filtro));
+                    duenos = duenos.Where(s => s.Cedula.Contains(filtro));
                 }
             }
             return duenos;
@@ -66,6 +66,8 @@ namespace MascotaFeliz.App.Persistencia
         {
             return _appContext.Duenos.FirstOrDefault(d => d.Id == idDueno);
         }
+
+         
 
         public Dueno UpdateDueno(Dueno dueno)
         {
