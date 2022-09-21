@@ -37,8 +37,8 @@
 <section id="personal">
     <div>
       <img src="./little-cute-animal-doctor-veterinarian-dog-puppy-cartoon-pet-health-care-vector.jpg" alt="">
-      <h4>Conozca nuestro pernosal</h4>
-      <a href="/Index" class="boton-veterinario">Veterinarios</a>
+      <h4>Nuestro Personal</h4>
+      <a href="/Veterinarios/ListadoVeterinario" class="boton-veterinario">Veterinarios</a>
     </div>
 
 </section>
@@ -93,21 +93,9 @@
 
     <script>
         $(document).ready( function () {
-        $('#tbl_duenos').DataTable({
-             "language": {
-                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-            }
-        });
-        $('#tbl_veterinarios').DataTable({
-             "language": {
-                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-            }
-        });
-        $('#tbl_Mascotas').DataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-            } 
-        });
+        $('#tbl_duenos').DataTable({"language": { "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"}});
+        $('#tbl_veterinarios').DataTable({"language": {"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json" }});
+        $('#tbl_Mascotas').DataTable({"language": {"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"} });
         } );
     </script>
 
