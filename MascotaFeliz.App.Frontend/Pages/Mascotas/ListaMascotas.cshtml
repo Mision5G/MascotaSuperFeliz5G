@@ -12,6 +12,7 @@
     <th>Detalles</th>
     <th>Editar</th>
     <th>Historia</th>
+    <th>Asignación</th>
     </tr>
 </thead>
 <tbody>
@@ -36,6 +37,11 @@
         <td>
             <a class="btn btn-primary table-btn" asp-page="./HistoriaMascotas" asp-route-mascotaId="@Mascota.Id">
                     Historia Mascota
+            </a>
+        </td>
+        <td> 
+        <a class= "btn btn-primary table-btn" asp-page="./Asignaciones/Asignar" asp-route-mascotaId="@Mascota.Id">
+                Asignar
             </a>
         </td>
 

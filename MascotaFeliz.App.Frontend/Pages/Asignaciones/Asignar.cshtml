@@ -1,0 +1,48 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.AsignarModel
+@{
+}
+
+<h1>Asignar</h1>
+
+
+<table>
+    
+<div>
+    Id: @Model.mascota.Id
+</div>
+<div>
+    Nombre: @Model.mascota.Nombre
+</div>
+
+<div class="col-12 mt-1">
+    <label for="dueno" class="form-label mb-0">Dueños</label>
+    <select class="form-control" id="propietario" asp-for="mascota.Dueno.Id" name="duenoId" aria-label="Default select example">
+     <option value="0">Selecciona el dueño</option> 
+     @foreach (var dueno in Model.listaDueno)
+     {
+        <option value="@dueno.Id">@dueno.Nombres @dueno.Apellidos @dueno.Cedula  </option>
+     }  
+    </select>
+
+
+</div>
+
+<div class="col-12 mt-1">
+    <label for="veterinario" class="form-label mb-0">veterinario</label>
+    <select class="form-control" id="veterinario" asp-for="mascota.Veterinario.Id" name="veterinarioId" aria-label="Default select example">
+     <option value="0">Selecciona el veterinario</option> 
+     @foreach (var veterinario in Model.listaVeterinario )
+     {
+        <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos @veterinario.TarjetaProfesional  </option>
+     }  
+    </select>
+</div>
+
+<div class="row g-3">
+    <div class="col-6 mt-1">
+        <button class="w-100 btn btn-primery btn.lg mt-4" type="submit"> Asignar </button>
+</div>
+
+
+<a asp-page="./Mascotas/ListaMascotas" class="btn-default">Lista de Mascotas </a>
