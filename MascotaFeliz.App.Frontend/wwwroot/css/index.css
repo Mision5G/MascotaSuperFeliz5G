@@ -4,7 +4,10 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
-
+h1{
+  color: darkgray;
+  text-align:center;
+}
 header{
   height:100px;
   background-color: darkgray;
@@ -157,7 +160,7 @@ header{
 }
 
 .boton-veterinario{
-  font-size: 30px;
+    font-size: 30px;
    display: inline-block;
    text-decoration: none;
    color: white;
@@ -171,6 +174,7 @@ header{
 .boton-veterinario:hover{
   transform: scale(1.2);
   color: aqua;
+  text-decoration: none;
 }
 
 
@@ -192,7 +196,7 @@ header{
 
 .contenido-iconos div{
   flex: 1;
-  margin: 20px 0px;
+  margin: 10px 0px;
   border-right: 2px solid black;
 }
 
@@ -203,6 +207,66 @@ header{
 .contenido-iconos div i{
   color: rgba(14, 151, 151, 0.705);
 }
+
+/*tablas*/
+
+.Table{
+  width: 80%;
+  border-collapse: collapse;
+  padding: 0px 50px ;
+  borde: 1px solid darkgray;
+  margin: 0px;
+  table-layaot: fixed;
+  text-align:center;
+  
+  
+}
+
+
+
+.Table tr{
+  background-color:darkgray;
+  border: 3px solid white;
+
+}
+
+.Table th,Table td{
+  font-size: 16px;
+  padding: 8px;
+  text-align: center;
+
+}
+
+.Table thead{
+  text-transform:uppercase;
+  color: white;
+  cursor: pointer;
+  
+  transition: 0.4s;
+}
+
+.Table thead:hover{
+  
+  color: aqua;
+}
+
+
+.Table tbody tr:hover{
+  background-color:rgba(5, 249, 249, 0.15);
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+.Table tbody td:hover{
+  background-color:rgba(5, 249, 249,0.50);
+  transform: scale(1.02);
+ 
+
+}
+
+
+
+
 
 
 @media(max-width: 768px){
@@ -253,7 +317,43 @@ header{
    border: none;
 
 }
+/*talba*/
+.Table{
+  border: 0px;
+  
+  
+}
 
+.Table thead{
+  display:none;
+  
+}
+.Table tr{
+  margin-bottom: 8px;
+  border-bottom: 4px solid darkgray;
+  display:block;
+}
+
+.Table th, .Table td{
+  font-size 12px;
+}
+.Table td{
+  display:block;
+  border-bottom: 1px solid darkgray;
+  text-align: left;
+
+}
+
+.Table td:last-child {
+  border-bottom: 0px;
+}
+
+.Table tb::before{
+  content:attr(data-label)
+  font-weight:bold;
+  text-transform:uppercase;
+ 
+} 
 
 
 }
