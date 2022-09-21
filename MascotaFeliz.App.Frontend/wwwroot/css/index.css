@@ -214,9 +214,9 @@ header{
   width: 80%;
   border-collapse: collapse;
   padding: 0px 50px ;
-  borde: 1px solid darkgray;
+  border: 1px solid darkgray;
   margin: 0px;
-  table-layaot: fixed;
+  table-layout: fixed;
   text-align:center;
   
   
@@ -261,6 +261,19 @@ header{
   background-color:rgba(5, 249, 249,0.50);
   transform: scale(1.02);
  
+
+}
+
+.Table a{
+  color:darkgray;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.4s;
+
+}
+
+.Table a:hover{
+  color: white;
 
 }
 
@@ -335,7 +348,7 @@ header{
 }
 
 .Table th, .Table td{
-  font-size 12px;
+  font-size: 12px;
 }
 .Table td{
   display:block;
@@ -350,7 +363,7 @@ header{
 
 .Table tb::before{
   content:attr(data-label)
-  font-weight:bold;
+  font-weight bold;
   text-transform:uppercase;
  
 } 
