@@ -180,7 +180,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\willi\\.nuget\\packages\\": {}
+    "C:\\Users\\Camilo Andres\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -188,11 +188,11 @@
       "projectUniqueName": "C:\\Mascotas\\MascotaSuperFeliz5G\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj",
       "projectName": "MascotaFeliz.App.Dominio",
       "projectPath": "C:\\Mascotas\\MascotaSuperFeliz5G\\MascotaFeliz.App.Dominio\\MascotaFeliz.App.Dominio.csproj",
-      "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Camilo Andres\\.nuget\\packages\\",
       "outputPath": "C:\\Mascotas\\MascotaSuperFeliz5G\\MascotaFeliz.App.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Camilo Andres\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
