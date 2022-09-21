@@ -7,6 +7,8 @@
 h1{
   color: darkgray;
   text-align:center;
+  display: none;
+  
 }
 header{
   height:100px;
@@ -89,11 +91,37 @@ header{
 #banner{
   padding: 0 50px;
   background-image:url(./super_fondo.jpg);
-  height: 50vh;
+  height: 40vh;
   background-position: center;
   background-size: cover;
   
 }
+#banner-propietarios{
+  padding: 0 50px;
+  background-image:url(3s.png);
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+  transition: 0.4s;
+  
+}
+
+#banner-Mascotas{
+  padding: 0 50px;
+  background-image:url(2s.png);
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+}
+#banner-Veterinarios{
+  padding: 0 50px;
+  background-image:url(1s.png);
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+
+}
+
 
 .Contenido-banner{
 
@@ -277,16 +305,71 @@ header{
 
 }
 
+/*boton */
 
+.a{
+  
+    font-size: 50px;
+    text-decoration: none;
+     padding: 20px 40px;
+     background: darkgray;
+     color: white;
+     align-self: baseline;
+     transition: all .4s ease-in-out;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  }
+  
+  .a{
+    transform: scale(1.2);
+    color: aqua;
+  }
+
+  .button{
+  
+    font-size: 50px;
+    text-decoration: none;
+     padding: 20px 40px;
+     background: darkgray;
+     color: white;
+     align-self: baseline;
+     transition: all .4s ease-in-out;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+  }
+  
+  .a{
+    transform: scale(1.2);
+    color: aqua;
+  }
 
 
 
 
 @media(max-width: 768px){
+  /*banner*/
+
+  #banner-propietarios{
+   display: none;
+   
+    
+  }
+  
+  #banner-Mascotas{
+    display: none;
+   
+  }
+  #banner-Veterinarios{
+    display: none;
+    
+  
+  }
+  
 
   .Mostrar-menu ,
   .Esconder-menu{
       display: block;
+  }
+  h1{
+    display: block;
   }
 
   .menu{
