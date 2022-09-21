@@ -12,7 +12,6 @@
     <th>Detalles</th>
     <th>Editar</th>
     <th>Historia</th>
-    <th>Asignación</th>
     </tr>
 </thead>
 <tbody>
@@ -25,23 +24,18 @@
         @*<td> @Mascota.Dueno.Cedula</td>   *@ 
 
         <td> 
-            <a class= "btn btn-primary table-btn" asp-page=".\DetalleMascotas" asp-route-mascotaId="@Mascota.Id">
-                Detalle Mascota
+            <a class= "fa-solid fa-magnifying-glass-plus" asp-page=".\DetalleMascotas" asp-route-mascotaId="@Mascota.Id">
+                
             </a>
         </td>
         <td>
-            <a class="btn btn-primary table-btn" asp-page="./EditarMascotas" asp-route-mascotaId="@Mascota.Id">
-                    Editar Mascota
+            <a class="fa-solid fa-pen-to-square" asp-page="./EditarMascotas" asp-route-mascotaId="@Mascota.Id">
+                    
             </a>
         </td>
         <td>
-            <a class="btn btn-primary table-btn" asp-page="./HistoriaMascotas" asp-route-mascotaId="@Mascota.Id">
-                    Historia Mascota
-            </a>
-        </td>
-        <td> 
-        <a class= "btn btn-primary table-btn" asp-page="../Asignaciones/Asignar" asp-route-mascotaId="@Mascota.Id">
-                Asignar
+            <a class="fa-solid fa-book-medical" asp-page="./HistoriaMascotas" asp-route-mascotaId="@Mascota.Id">
+                    
             </a>
         </td>
 
