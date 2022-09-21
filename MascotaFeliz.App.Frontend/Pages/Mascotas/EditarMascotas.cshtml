@@ -4,6 +4,7 @@
 }
 <h2>Agregar o editar Mascotas</h2>
 
+
 <form method="post" >
     <div class="form-group">
         <input type="hidden" asp-for = "mascota.Id" />
@@ -16,9 +17,10 @@
         <label asp-for="mascota.Raza"></label>
         <input asp-for="mascota.Raza" class="form-control">
 
-        <button type="submit" class="btn btn-primary">Grabar</button>
+        <button type="submit" class="boton-veterinario">Grabar</button>
     </div>
 
 </form>
 
-<a asp-page="./ListaMascotas" class="btn-default">Lista de Mascotas </a>
+<a asp-page="./ListaMascotas" class="boton-veterinario">Lista de Mascotas </a>
+
