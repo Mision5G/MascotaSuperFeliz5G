@@ -48,7 +48,7 @@ namespace MascotaFeliz.App.Consola
 
 
         //AddHistoria();
-        AsignarVisitasPyP();
+        //AsignarVisitasPyP();
             
 
            //AddVisitaPyP(); 

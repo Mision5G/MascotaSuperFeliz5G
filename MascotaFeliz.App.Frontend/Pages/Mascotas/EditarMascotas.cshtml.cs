@@ -13,8 +13,10 @@ namespace MascotaFeliz.App.Frontend.Pages
     {
 
         private readonly IRepositorioMascota _repoMascota;
+        private static IRepositorioHistoria _repoHistoria= new RepositorioHistoria(new Persistencia.AppContext()); 
         [BindProperty]
         public Mascota mascota { get; set; }
+        public Historia historia { get; set; }
 
             public EditarMascotasModel()
             {
@@ -29,6 +31,7 @@ namespace MascotaFeliz.App.Frontend.Pages
                 else
                 {
                     mascota = new Mascota();
+                    
                 }
                 if (mascota == null)
                 {
@@ -51,6 +54,17 @@ namespace MascotaFeliz.App.Frontend.Pages
                 else
                 {
                     _repoMascota.AddMascota(mascota);
+                    _repoHistoria.AddHistoria(historia);
+
+                   if(historia.FechaInicial> 0)
+                    {
+                     return Page(): 
+                    }  
+                    else
+                    {
+                        
+                    }                 
+                 
                 }
                 return Page();
         }
