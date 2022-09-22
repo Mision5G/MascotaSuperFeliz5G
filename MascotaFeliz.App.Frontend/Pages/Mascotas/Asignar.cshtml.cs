@@ -42,21 +42,23 @@ namespace MascotaFeliz.App.Frontend.Pages
         }
 
 
-        public IActionResult OnPost(Mascota mascota, int duenoId, int veterinarioId)
+        public IActionResult OnPost(int mascotaId, int duenoId, int veterinarioId)
         {
             if (ModelState.IsValid)
             {
                 dueno = _repoDueno.GetDueno(duenoId);
                 veterinario = _repoVeterinario.GetVeterinario(veterinarioId);
-                //Console.WriteLine(veterinario.Id);
+                //Console.WriteLine(mascotaId);
                 
-                if (mascota.Id>0)
+                if (mascotaId != 0)
                 {
+                    //Console.WriteLine("Hola");
                     mascota.Veterinario = veterinario;
                     mascota.Dueno = dueno;
                     //_repoMascota.UpdateMascota(mascota);
-                    _repoMascota.AsignarDueno(mascota.Id, duenoId);                    
-                    _repoMascota.AsignarVeterinario(mascota.Id, veterinarioId);
+                    _repoMascota.AsignarDueno(mascotaId, duenoId);                    
+                    _repoMascota.AsignarVeterinario(mascotaId, veterinarioId);
+                    
                 }
 
                 return RedirectToPage("../Mascotas/ListaMascotas");

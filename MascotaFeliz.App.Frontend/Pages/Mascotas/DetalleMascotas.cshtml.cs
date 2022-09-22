@@ -12,7 +12,9 @@ namespace MascotaFeliz.App.Frontend.Pages
     public class DetalleMascotasModel : PageModel
     {
         private readonly IRepositorioMascota _repoMascota;
+        private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         public Mascota mascota {get;set;}
+        public Dueno dueno{get;set;}
         public DetalleMascotasModel()
         {
             this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());
