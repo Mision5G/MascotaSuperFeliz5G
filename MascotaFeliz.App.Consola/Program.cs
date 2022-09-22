@@ -48,12 +48,13 @@ namespace MascotaFeliz.App.Consola
 
 
         //AddHistoria();
-        AsignarVisitasPyP();
+        //AsignarVisitasPyP();
             
 
-           //AddVisitaPyP(); 
+        //AddVisitaPyP(); 
            //EliminarVisitaPyP(1);
            //EditarVisitaPyP(3);
+           AsignarVet_to_VPyP();
 
             
 
@@ -95,13 +96,14 @@ namespace MascotaFeliz.App.Consola
         private static void AddVisitaPyP() {
             var VisitaPyP= new VisitaPyP
             {
-                FechaVisita= DateTime.Now,
-                Temperatura = 33.2F,
-                Peso=12.6F,
-                FrecuenciaCardiaca=90.4F,
-                FrecuenciaRespiratoria=80F,
-                EstadoAnimo= "Somnoliento",
-                Recomendaciones="Tinto"
+                //FechaVisita= DateTime.Now,
+                FechaVisita=new DateTime(2020, 03, 13),
+                Temperatura = 27.8F,
+                Peso=13.1F,
+                FrecuenciaCardiaca=85.4F,
+                FrecuenciaRespiratoria=93F,
+                EstadoAnimo= "Hiperactividad",
+                Recomendaciones="Paseos"
             };
             _repoVisitaPyP.AddVisitaPyP(VisitaPyP);
 
@@ -162,7 +164,11 @@ namespace MascotaFeliz.App.Consola
             var historia = _repoMascota.AsignarHistoria(3, 3);
             Console.WriteLine(historia.FechaInicial);
         }
-
+       private static void AsignarVet_to_VPyP()
+        {
+            var veterinario = _repoVisitaPyP.AsignarVeterinario(1,1);
+            Console.WriteLine(veterinario.Nombres + " " + veterinario.Apellidos);
+        }
 
 
 

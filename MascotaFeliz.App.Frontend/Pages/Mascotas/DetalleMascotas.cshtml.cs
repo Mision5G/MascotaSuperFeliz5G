@@ -15,6 +15,7 @@ namespace MascotaFeliz.App.Frontend.Pages
         private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         public Mascota mascota {get;set;}
         public Dueno dueno{get;set;}
+        
         public DetalleMascotasModel()
         {
             this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());
