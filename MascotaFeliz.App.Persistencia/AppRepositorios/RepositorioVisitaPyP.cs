@@ -52,20 +52,21 @@ namespace MascotaFeliz.App.Persistencia
             }
             return VisitaPyPEncontrada;
         } 
-      /*  public Veterinario AsignarVeterinario(int idMascota, int idVeterinario)
+        public Veterinario AsignarVeterinario(int idVisitaPyP, int idVeterinario)
         {
-            var mascotaEncontrada = _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
-            if (mascotaEncontrada != null)
+            var VisitaPyPEncontrada = _appContext.VisitasPyP.FirstOrDefault(m => m.Id == idVisitaPyP);
+            if (VisitaPyPEncontrada != null)
             {
                 var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(v => v.Id == idVeterinario);
                 if (veterinarioEncontrado != null)
                 {
-                    mascotaEncontrada.Veterinario = veterinarioEncontrado;
+                    VisitaPyPEncontrada.Veterinario = veterinarioEncontrado;
                     _appContext.SaveChanges();
                 }
                 return veterinarioEncontrado;
             }
             return null;
-        } */
- }
+        }
+
+    }
 }
