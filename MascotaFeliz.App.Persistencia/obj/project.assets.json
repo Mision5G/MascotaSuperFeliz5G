@@ -7263,7 +7263,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Juan\\.nuget\\packages\\": {}
+    "C:\\Users\\laurac.cardona\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -7271,11 +7271,11 @@
       "projectUniqueName": "C:\\Mascotas\\MascotaSuperFeliz5G\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
       "projectName": "MascotaFeliz.App.Persistencia",
       "projectPath": "C:\\Mascotas\\MascotaSuperFeliz5G\\MascotaFeliz.App.Persistencia\\MascotaFeliz.App.Persistencia.csproj",
-      "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\laurac.cardona\\.nuget\\packages\\",
       "outputPath": "C:\\Mascotas\\MascotaSuperFeliz5G\\MascotaFeliz.App.Persistencia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\laurac.cardona\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"

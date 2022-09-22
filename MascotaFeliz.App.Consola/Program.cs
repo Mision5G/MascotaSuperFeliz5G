@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using MascotaFeliz.App.Dominio;
 using MascotaFeliz.App.Persistencia;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace MascotaFeliz.App.Consola
 
 
             //ListarDuenosFiltro();      
-            AddDueno();
+           // AddDueno();
             //BuscarDueno(2);
              //ListarDuenos();
              //EditarDueno();
@@ -42,15 +42,18 @@ namespace MascotaFeliz.App.Consola
            //BuscarMascota(1);
            //EditarMascota(6);
             //EliminarMascota(1);
+            AsignarVeterinario();
+            AsignarDueno();
+            //AsignarHistoria();
 
 
             //AddHistoria();
-            //AsignarVisitaPyP();
+           //AsignarVisitaPyP(1);
             
 
-            //AddVisitaPyP(); 
-            //EliminarVisitaPyP(1);
-            //EditarVisitaPyP(3);
+           // AddVisitaPyP(); 
+           //EliminarVisitaPyP(1);
+           //EditarVisitaPyP(3);
 
             
 
@@ -60,12 +63,12 @@ namespace MascotaFeliz.App.Consola
         {
             var dueno = new Dueno
             {
-                Cedula = "7324",
-                Nombres = "Daniel",
-                Apellidos = "Rosas", 
-                Direccion = "Calle 40 # 19B-31",
-                Telefono = "320111111",
-                Correo = "willy@gmail.com"
+                Cedula = "6632231",
+                Nombres = "Sofía",
+                Apellidos = "Cardenas", 
+                Direccion = "Calle 10 # 1-49",
+                Telefono = "45644366",
+                Correo = "juanchitomayor@gmail.com"
             };
             _repoDueno.AddDueno(dueno);
         }
@@ -93,12 +96,12 @@ namespace MascotaFeliz.App.Consola
             var VisitaPyP= new VisitaPyP
             {
                 FechaVisita= DateTime.Now,
-                Temperatura = 32.2F,
-                Peso=2.7F,
-                FrecuenciaCardiaca=300.4F,
-                FrecuenciaRespiratoria=48F,
-                EstadoAnimo= "Contento",
-                Recomendaciones="Más paseos"
+                Temperatura = 39.2F,
+                Peso=2.3F,
+                FrecuenciaCardiaca=210.4F,
+                FrecuenciaRespiratoria=45F,
+                EstadoAnimo= "Deprimido",
+                Recomendaciones="Más vegetales y menos comida procesada"
             };
             _repoVisitaPyP.AddVisitaPyP(VisitaPyP);
 
@@ -140,18 +143,40 @@ namespace MascotaFeliz.App.Consola
             }
         }
 
-       /* private static void AsignarVeterinario()
+       private static void AsignarVeterinario()
         {
-            var veterinario = _repoMascota.AsignarVeterinario(1, 15);
+            var veterinario = _repoMascota.AsignarVeterinario(7, 5);
             Console.WriteLine(veterinario.Nombres + " " + veterinario.Apellidos);
-        }*/
+        }
+
+        private static void AsignarDueno()
+        {
+            var dueno = _repoMascota.AsignarDueno(7, 2);
+            Console.WriteLine(dueno.Nombres + " " + dueno.Apellidos);
+        }
+
+        private static void AsignarHistoria()
+        {
+            var historia = _repoMascota.AsignarHistoria(2, 1);
+            Console.WriteLine(historia.FechaInicial);
+        }
+
+
+
+
+
+
+
+
+
+
 
         //BUSCAR POR ID
 
         private static void BuscarDueno(int idDueno)
         {
             var dueno = _repoDueno.GetDueno(idDueno);
-            Console.WriteLine(dueno.Cedula + " " + dueno.Nombres + " " + dueno.Apellidos + " " + dueno.Direccion + " "  + dueno.Telefono + " ");
+            Console.WriteLine(dueno.Nombres + " " + dueno.Apellidos);
         }
 
         private static void BuscarVeterinario(int idVeterinario)
@@ -262,6 +287,7 @@ namespace MascotaFeliz.App.Consola
             mascotaE.Raza = "Criolla";
             _repoMascota.UpdateMascota(mascotaE);
         }
+
         private static void EditarVisitaPyP(int idVisitaPyP){
             var vis = _repoVisitaPyP.GetVisitaPyP(idVisitaPyP);
             vis.FechaVisita = new DateTime(2022, 08, 19);
@@ -273,6 +299,7 @@ namespace MascotaFeliz.App.Consola
             vis.Recomendaciones="Más paseos";
             _repoVisitaPyP.UpdateVisitaPyP(vis);
         }
+
 
 //ELIMINAR
 
@@ -287,9 +314,9 @@ namespace MascotaFeliz.App.Consola
         private static void EliminarMascota(int idMascota){
             _repoMascota.DeleteMascota(idMascota);
         } 
-        private static void EliminarVisitaPyP(int idVisitaPyP){
+         private static void EliminarVisitaPyP(int idVisitaPyP){
             _repoVisitaPyP.DeleteVisitaPyP(idVisitaPyP);
-        } 
+        }
         
     }
 }

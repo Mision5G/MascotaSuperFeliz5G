@@ -48,12 +48,15 @@ namespace MascotaFeliz.App.Frontend.Pages
             {
                 dueno = _repoDueno.GetDueno(duenoId);
                 veterinario = _repoVeterinario.GetVeterinario(veterinarioId);
+                //Console.WriteLine(veterinario.Id);
                 
                 if (mascota.Id>0)
                 {
                     mascota.Veterinario = veterinario;
                     mascota.Dueno = dueno;
-                    _repoMascota.UpdateMascota(mascota);
+                    //_repoMascota.UpdateMascota(mascota);
+                    _repoMascota.AsignarDueno(mascota.Id, duenoId);                    
+                    _repoMascota.AsignarVeterinario(mascota.Id, veterinarioId);
                 }
 
                 return RedirectToPage("../Mascotas/ListaMascotas");
