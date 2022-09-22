@@ -5797,7 +5797,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Juan\\.nuget\\packages\\": {}
+    "C:\\Users\\laurac.cardona\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -5805,11 +5805,11 @@
       "projectUniqueName": "C:\\Mascotas\\MascotaSuperFeliz5G\\MascotaFeliz.App.Consola\\MascotaFeliz.App.Consola.csproj",
       "projectName": "MascotaFeliz.App.Consola",
       "projectPath": "C:\\Mascotas\\MascotaSuperFeliz5G\\MascotaFeliz.App.Consola\\MascotaFeliz.App.Consola.csproj",
-      "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\laurac.cardona\\.nuget\\packages\\",
       "outputPath": "C:\\Mascotas\\MascotaSuperFeliz5G\\MascotaFeliz.App.Consola\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\laurac.cardona\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
