@@ -47,14 +47,14 @@ namespace MascotaFeliz.App.Consola
             //AsignarHistoria();
 
 
-        //AddHistoria();
+        AddHistoria();
         //AsignarVisitasPyP();
             
 
         //AddVisitaPyP(); 
            //EliminarVisitaPyP(1);
            //EditarVisitaPyP(3);
-           AsignarVet_to_VPyP();
+          // AsignarVet_to_VPyP();
 
             
 
