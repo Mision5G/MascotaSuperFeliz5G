@@ -42,16 +42,16 @@ namespace MascotaFeliz.App.Consola
            //BuscarMascota(1);
            //EditarMascota(6);
             //EliminarMascota(1);
-            AsignarVeterinario();
-            AsignarDueno();
+            //AsignarVeterinario();
+            //AsignarDueno();
             //AsignarHistoria();
 
 
-            //AddHistoria();
-           //AsignarVisitaPyP(1);
+        //AddHistoria();
+        AsignarVisitasPyP();
             
 
-           // AddVisitaPyP(); 
+           //AddVisitaPyP(); 
            //EliminarVisitaPyP(1);
            //EditarVisitaPyP(3);
 
@@ -86,7 +86,7 @@ namespace MascotaFeliz.App.Consola
         private static void AddHistoria() {
             var Historia = new Historia
             {
-                FechaInicial= DateTime.Now
+                FechaInicial= new DateTime(2021, 11, 28)
             };
             _repoHistoria.AddHistoria(Historia);
 
@@ -96,12 +96,12 @@ namespace MascotaFeliz.App.Consola
             var VisitaPyP= new VisitaPyP
             {
                 FechaVisita= DateTime.Now,
-                Temperatura = 39.2F,
-                Peso=2.3F,
-                FrecuenciaCardiaca=210.4F,
-                FrecuenciaRespiratoria=45F,
-                EstadoAnimo= "Deprimido",
-                Recomendaciones="Más vegetales y menos comida procesada"
+                Temperatura = 33.2F,
+                Peso=12.6F,
+                FrecuenciaCardiaca=90.4F,
+                FrecuenciaRespiratoria=80F,
+                EstadoAnimo= "Somnoliento",
+                Recomendaciones="Tinto"
             };
             _repoVisitaPyP.AddVisitaPyP(VisitaPyP);
 
@@ -124,9 +124,11 @@ namespace MascotaFeliz.App.Consola
 
         //Asignar visita PyP, Dueños y demás
 
-        private static void AsignarVisitaPyP(int idHistoria)
+        private static void AsignarVisitasPyP()
         {
-            var historia = _repoHistoria.GetHistoria(idHistoria);
+           var VisitaPyP= _repoHistoria.AsignarVisitaPyP(3,5);
+            Console.WriteLine(VisitaPyP.FechaVisita);
+           /* var historia = _repoHistoria.GetHistoria(idHistoria);
             if (historia != null)
             {
                 if (historia.VisitasPyP != null)
@@ -140,7 +142,7 @@ namespace MascotaFeliz.App.Consola
                     };
                 }
                 _repoHistoria.UpdateHistoria(historia);
-            }
+            }*/
         }
 
        private static void AsignarVeterinario()
@@ -157,7 +159,7 @@ namespace MascotaFeliz.App.Consola
 
         private static void AsignarHistoria()
         {
-            var historia = _repoMascota.AsignarHistoria(2, 1);
+            var historia = _repoMascota.AsignarHistoria(3, 3);
             Console.WriteLine(historia.FechaInicial);
         }
 

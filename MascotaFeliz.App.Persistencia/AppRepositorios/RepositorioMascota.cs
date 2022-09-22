@@ -96,7 +96,7 @@ namespace MascotaFeliz.App.Persistencia
             return null;
             }
 
-            public Dueno AsignarDueno(int idMascota, int idDueno)
+        public Dueno AsignarDueno(int idMascota, int idDueno)
         {
             var mascotaEncontrada = _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
             if (mascotaEncontrada != null)
@@ -113,7 +113,7 @@ namespace MascotaFeliz.App.Persistencia
             }
 
 
-             public Historia AsignarHistoria(int idMascota, int idHistoria)
+        public Historia AsignarHistoria(int idMascota, int idHistoria)
         {
             var mascotaEncontrada = _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
             if (mascotaEncontrada != null)
@@ -127,7 +127,7 @@ namespace MascotaFeliz.App.Persistencia
                 return historiaEncontrada;
             }
             return null;
-            }
+        }
              
     }
 }

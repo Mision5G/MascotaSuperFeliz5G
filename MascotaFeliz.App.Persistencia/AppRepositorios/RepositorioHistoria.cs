@@ -78,6 +78,26 @@ namespace MascotaFeliz.App.Persistencia
             }
             return historiaEncontrada;
         } 
+        public VisitaPyP AsignarVisitaPyP(int idHistoria, int idVisita)
+        {
+            var historiaEncontrada = _appContext.Historias.FirstOrDefault(m => m.Id == idHistoria);
+            if (historiaEncontrada != null)
+            {
+                var VisitaPyPEncontrada = _appContext.VisitasPyP.FirstOrDefault(v => v.Id == idVisita);
+                if (VisitaPyPEncontrada != null)    
+                {
+                    if(historiaEncontrada.VisitasPyP!=null){
+                        historiaEncontrada.VisitasPyP.Add(VisitaPyPEncontrada);
+                    }
+                    else{
+                        historiaEncontrada.VisitasPyP = new List<VisitaPyP>{VisitaPyPEncontrada};
+                    }
+                    _appContext.SaveChanges();
+                }
+                return VisitaPyPEncontrada;
+            }
+            return null;
+        }
         
     }
 }
