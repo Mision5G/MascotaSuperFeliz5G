@@ -4,28 +4,24 @@
 }
 <h1>Asignar</h1>
 
+@*<h2>
+    Nombre: @mascota.Nombre
+</h2>*@
 
-<table>
-    
-<div>
-    Id: @Model.mascota.Id
-</div>
-<div>
-    Nombre: @Model.mascota.Nombre
-</div>
 
+<form method="post">       
+        
 <div class="col-12 mt-1">
     <label for="dueno" class="form-label mb-0">Dueños</label>
-    <select class="form-control" id="propietario" asp-for="mascota.Dueno.Id" name="duenoId" aria-label="Default select example">
+    <select class="form-control" id="dueno" asp-for="mascota.Dueno.Id" name="duenoId" aria-label="Default select example">
      <option value="0">Selecciona el dueño</option> 
      @foreach (var dueno in Model.listaDueno)
      {
         <option value="@dueno.Id">@dueno.Nombres @dueno.Apellidos @dueno.Cedula  </option>
      }  
     </select>
-
-
 </div>
+
 
 <div class="col-12 mt-1">
     <label for="veterinario" class="form-label mb-0">veterinario</label>
@@ -38,10 +34,12 @@
     </select>
 </div>
 
-<div class="row g-3">
-    <div class="col-6 mt-1">
-        <button class="w-100 btn btn-primery btn.lg mt-4" type="submit"> Asignar </button>
-</div>
+
+    <button type="submit" class="btn btn-primary">Asignar</button>
+
+</form>
 
 
-<a asp-page="./Mascotas/ListaMascotas" class="btn-default">Lista de Mascotas </a>
+
+
+@*<a asp-page="./Mascotas/ListaMascotas" class="btn-default">Lista de Mascotas </a>*@

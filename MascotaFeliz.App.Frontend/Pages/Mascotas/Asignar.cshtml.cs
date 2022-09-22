@@ -42,7 +42,7 @@ namespace MascotaFeliz.App.Frontend.Pages
         }
 
 
-        public IActionResult OnPost( Mascota mascota, int duenoId, int veterinarioId)
+        public IActionResult OnPost(Mascota mascota, int duenoId, int veterinarioId)
         {
             if (ModelState.IsValid)
             {

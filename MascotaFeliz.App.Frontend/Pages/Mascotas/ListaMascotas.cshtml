@@ -14,6 +14,7 @@
     <th>Detalles</th>
     <th>Editar</th>
     <th>Historia</th>
+    <th>Asignar</th>
     </tr>
 </thead>
 <tbody>
@@ -38,6 +39,11 @@
         <td>
             <a class="fa-solid fa-book-medical" asp-page="./HistoriaMascotas" asp-route-mascotaId="@Mascota.Id">
                     
+            </a>
+        </td>
+        <td>
+            <a class="fa-solid fa-book-medical" asp-page="./Asignar" asp-route-mascotaId="@Mascota.Id">
+                    Asignar
             </a>
         </td>
 
