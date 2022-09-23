@@ -1,0 +1,33 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.AgregarVisitaModel
+@{
+}
+<h2>Agregar o editar Visita</h2>
+
+
+<form method="post" >
+    <div class="form-group">
+        <input type="hidden" asp-for = "visita.Id" />
+        <label asp-for="visita.FechaVisita"></label>
+        <input asp-for="visita.FechaVisita" class="form-control">
+        <label asp-for="visita.Temperatura"></label>
+        <input asp-for="visita.Temperatura" class="form-control">
+        <label asp-for="visita.Peso"></label>
+        <input asp-for="visita.Peso" class="form-control">
+        <label asp-for="visita.FrecuenciaRespiratoria"></label>
+        <input asp-for="visita.FrecuenciaRespiratoria" class="form-control">
+        <label asp-for="visita.FrecuenciaCardiaca"></label>
+        <input asp-for="visita.FrecuenciaCardiaca" class="form-control">
+        <label asp-for="visita.EstadoAnimo"></label>
+        <input asp-for="visita.EstadoAnimo" class="form-control">
+        <label asp-for="visita.Recomendaciones"></label>
+        <input asp-for="visita.Recomendaciones" class="form-control">
+
+        <button type="submit" class="boton-veterinario">Grabar</button>
+    </div>
+
+</form>
+
+<a asp-page="./ListaMascotas" class="boton-veterinario">Lista de Mascotas </a>
+
+
