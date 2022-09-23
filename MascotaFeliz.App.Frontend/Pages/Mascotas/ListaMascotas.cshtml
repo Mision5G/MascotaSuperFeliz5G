@@ -10,21 +10,24 @@
     <tr>
     <th>Nombre</th>
     <th>Raza</th>
-    @*<th>Dueño</th>*@
-    <th>Detalles</th>
+    <th>Dueño</th>
+    <th>Vet</th>
+    <th>Detalle</th>
     <th>Editar</th>
     <th>Historia</th>
     <th>Asignar</th>
     </tr>
 </thead>
 <tbody>
+
 @foreach (var Mascota in Model.listadoMascota )
 {
     <tr>
 
         <td> @Mascota.Nombre</td>
         <td> @Mascota.Raza</td> 
-        @*<td> @Mascota.Dueno.Cedula</td>   *@ 
+        <td> @Mascota.Dueno.Nombres</td>
+        <td> @Mascota.Veterinario.Nombres</td>
 
         <td> 
             <a class= "fa-solid fa-magnifying-glass-plus" asp-page=".\DetalleMascotas" asp-route-mascotaId="@Mascota.Id">
@@ -43,7 +46,7 @@
         </td>
         <td>
             <a class="fa-solid fa-book-medical" asp-page="./Asignar" asp-route-mascotaId="@Mascota.Id">
-                    Asignar
+
             </a>
         </td>
 

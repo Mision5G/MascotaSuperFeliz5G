@@ -42,12 +42,12 @@ namespace MascotaFeliz.App.Consola
            //BuscarMascota(1);
            //EditarMascota(6);
             //EliminarMascota(1);
-            //AsignarVeterinario();
-            //AsignarDueno();
-            //AsignarHistoria();
+            AsignarVeterinario();
+            AsignarDueno();
+            AsignarHistoria();
 
 
-        AddHistoria();
+        //AddHistoria();
         //AsignarVisitasPyP();
             
 
@@ -97,13 +97,13 @@ namespace MascotaFeliz.App.Consola
             var VisitaPyP= new VisitaPyP
             {
                 //FechaVisita= DateTime.Now,
-                FechaVisita=new DateTime(2020, 03, 13),
-                Temperatura = 27.8F,
-                Peso=13.1F,
-                FrecuenciaCardiaca=85.4F,
-                FrecuenciaRespiratoria=93F,
-                EstadoAnimo= "Hiperactividad",
-                Recomendaciones="Paseos"
+                FechaVisita=new DateTime(2022, 05, 30),
+                Temperatura = 33.8F,
+                Peso=6.1F,
+                FrecuenciaCardiaca=120.4F,
+                FrecuenciaRespiratoria=113F,
+                EstadoAnimo= "Somnolencia",
+                Recomendaciones="Más agua"
             };
             _repoVisitaPyP.AddVisitaPyP(VisitaPyP);
 
@@ -149,19 +149,19 @@ namespace MascotaFeliz.App.Consola
 
        private static void AsignarVeterinario()
         {
-            var veterinario = _repoMascota.AsignarVeterinario(7, 5);
+            var veterinario = _repoMascota.AsignarVeterinario(2, 3);
             Console.WriteLine(veterinario.Nombres + " " + veterinario.Apellidos);
         }
 
         private static void AsignarDueno()
         {
-            var dueno = _repoMascota.AsignarDueno(7, 2);
+            var dueno = _repoMascota.AsignarDueno(2, 1);
             Console.WriteLine(dueno.Nombres + " " + dueno.Apellidos);
         }
 
         private static void AsignarHistoria()
         {
-            var historia = _repoMascota.AsignarHistoria(3, 3);
+            var historia = _repoMascota.AsignarHistoria(2, 2);
             Console.WriteLine(historia.FechaInicial);
         }
        private static void AsignarVet_to_VPyP()

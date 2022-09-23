@@ -53,18 +53,7 @@ namespace MascotaFeliz.App.Frontend.Pages
                 }
                 else
                 {
-                    _repoMascota.AddMascota(mascota);
-                    _repoHistoria.AddHistoria(historia);
-
-                   if(historia.FechaInicial> 0)
-                    {
-                     return Page(): 
-                    }  
-                    else
-                    {
-                        
-                    }                 
-                 
+                    _repoMascota.AddMascota(mascota);           
                 }
                 return Page();
         }
