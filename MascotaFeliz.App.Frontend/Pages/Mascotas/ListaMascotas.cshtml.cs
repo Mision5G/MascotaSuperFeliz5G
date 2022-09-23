@@ -17,6 +17,7 @@ namespace MascotaFeliz.App.Frontend.Pages
         public IEnumerable<Mascota> listadoMascota {get;set;}
         public IEnumerable<Dueno> listadoDueno {get;set;}
         public IEnumerable<Veterinario> listadoVeterinario {get;set;}
+       
         public ListaMascotasModel()
         {
             this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());

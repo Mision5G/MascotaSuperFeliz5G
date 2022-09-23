@@ -8,6 +8,7 @@
 <form method="post" >
     <div class="form-group">
         <input type="hidden" asp-for = "mascota.Id" />
+        @*<input type="hidden" asp-for = "mascota.historia.Id" />*@
         <label asp-for="mascota.Nombre"></label>
         <input asp-for="mascota.Nombre" class="form-control">
         <label asp-for="mascota.Color"></label>
@@ -17,10 +18,31 @@
         <label asp-for="mascota.Raza"></label>
         <input asp-for="mascota.Raza" class="form-control">
 
+        <label for="dueno">Dueño</label>
+        @*<div class="col-12 mt-1">*@
+        <select class="form-control" id="dueno" asp-for="mascota.Dueno.Id" name="duenoId">
+        <option value="0">Selecciona el dueño</option> 
+        @foreach (var dueno in Model.listaDueno)
+        {
+            <option value="@dueno.Id">@dueno.Nombres @dueno.Apellidos @dueno.Cedula  </option>
+        }  
+        </select>
+        </div>
+
+        <label for="veterinario">Veterinario</label>
+        <select class="form-control" id="veterinario" asp-for="mascota.Veterinario.Id" name="veterinarioId">
+        <option value="0">Selecciona el veterinario</option> 
+        @foreach (var veterinario in Model.listaVeterinario )
+        {
+            <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos @veterinario.TarjetaProfesional  </option>
+        }  
+        </select>
+        </div>
+
         <button type="submit" class="boton-veterinario">Grabar</button>
-    </div>
+        </div>
 
-</form>
+        </form>
 
-<a asp-page="./ListaMascotas" class="boton-veterinario">Lista de Mascotas </a>
+        <a asp-page="./ListaMascotas" class="boton-veterinario">Lista de Mascotas </a>
 
