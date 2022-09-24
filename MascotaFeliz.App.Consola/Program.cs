@@ -41,7 +41,7 @@ namespace MascotaFeliz.App.Consola
            //ListarMascotas();
            //BuscarMascota(1);
            //EditarMascota(6);
-            EliminarMascota(3);
+            //EliminarMascota(3);
             //AsignarVeterinario();
             //AsignarDueno();
             //AsignarHistoria();
@@ -54,7 +54,7 @@ namespace MascotaFeliz.App.Consola
         //AddVisitaPyP(); 
            //EliminarVisitaPyP(1);
            //EditarVisitaPyP(3);
-          // AsignarVet_to_VPyP();
+          AsignarVet_to_VPyP();
 
             
 
@@ -166,7 +166,7 @@ namespace MascotaFeliz.App.Consola
         }
        private static void AsignarVet_to_VPyP()
         {
-            var veterinario = _repoVisitaPyP.AsignarVeterinario(1,1);
+            var veterinario = _repoVisitaPyP.AsignarVeterinario(2,2);
             Console.WriteLine(veterinario.Nombres + " " + veterinario.Apellidos);
         }
 

@@ -12,16 +12,28 @@ namespace MascotaFeliz.App.Frontend.Pages
     public class AgregarVisitaModel : PageModel
     {
         private readonly IRepositorioVisitaPyP _repoVisitaPyP;
-        //private static IRepositorioHistoria _repoHistoria= new RepositorioHistoria(new Persistencia.AppContext()); 
+        private readonly IRepositorioVeterinario _repoVeterinario;
+        private readonly IRepositorioHistoria _repoHistoria;
+        private readonly IRepositorioMascota _repoMascota;
         [BindProperty]
         public VisitaPyP visita { get; set; }
-        //public Historia historia { get; set; }
+        public Historia historia {get;set;}
+        public Veterinario veterinario { get; set; }
+        public Mascota mascota { get; set; }
+
+        public IEnumerable<Veterinario> listaVeterinarios { get; set; }
+        public IEnumerable<Mascota> listaMascota { get; set; }
 
         public AgregarVisitaModel(){
             this._repoVisitaPyP = new RepositorioVisitaPyP(new Persistencia.AppContext());
+            this._repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
+            this._repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+            this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());           
         }
 
         public IActionResult OnGet(int? visitaId){
+            listaVeterinarios = _repoVeterinario.GetAllVeterinarios();
+
             if (visitaId.HasValue){
                 visita = _repoVisitaPyP.GetVisitaPyP(visitaId.Value);
             }
@@ -31,24 +43,31 @@ namespace MascotaFeliz.App.Frontend.Pages
             if (visita == null){
                 return RedirectToPage("./NotFound");
             }
-            else
             return Page();
         }
 
-        public IActionResult OnPost(){
+        public IActionResult OnPost(VisitaPyP visita , int veterinarioId){
             if (!ModelState.IsValid)
                 {
-                    return Page();
-                }
-            if (visita.Id > 0)
-                {
-                    visita = _repoVisitaPyP.UpdateVisitaPyP(visita);
-                }
-            else
-                {
-                    _repoVisitaPyP.AddVisitaPyP(visita);           
-                }
-            return Page();
+                    veterinario = _repoVeterinario.GetVeterinario(veterinarioId);
+                    Console.WriteLine(veterinarioId);
+                if (visita.Id > 0)
+                    {
+                        visita.Veterinario= veterinario;
+                        visita = _repoVisitaPyP.UpdateVisitaPyP(visita);
+                    }
+                else
+                    {
+                        visita = _repoVisitaPyP.AddVisitaPyP(visita);   
+                        _repoVisitaPyP.AsignarVeterinario(visita.Id,veterinario.Id);        
+                    }
+                    return RedirectToPage("/Mascotas/ListaMascotas");
+                   
+            }
+            else{
+                return Page();
+            }
+            
         }
     }
 }

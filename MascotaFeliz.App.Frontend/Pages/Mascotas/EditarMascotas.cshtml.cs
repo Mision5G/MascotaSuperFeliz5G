@@ -70,12 +70,7 @@ namespace MascotaFeliz.App.Frontend.Pages
                 }
                 else
                 {
-                    
-                   // historia = new Historia {FechaInicial = new DateTime.Today};
-                    historia = new Historia
-                    {
-                    FechaInicial= DateTime.Today
-                    };
+                    historia = new Historia {FechaInicial= DateTime.Today};
                     historia = _repoHistoria.AddHistoria(historia);
                     mascota = _repoMascota.AddMascota(mascota);
                     _repoMascota.AsignarDueno(mascota.Id,dueno.Id);

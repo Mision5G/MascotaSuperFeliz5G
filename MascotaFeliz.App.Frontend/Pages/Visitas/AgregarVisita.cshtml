@@ -4,7 +4,6 @@
 }
 <h2>Agregar o editar Visita</h2>
 
-
 <form method="post" >
     <div class="form-group">
         <input type="hidden" asp-for = "visita.Id" />
@@ -22,6 +21,15 @@
         <input asp-for="visita.EstadoAnimo" class="form-control">
         <label asp-for="visita.Recomendaciones"></label>
         <input asp-for="visita.Recomendaciones" class="form-control">
+
+        <label for="veterinario">Veterinario</label>
+        <select id="veterinario" asp-for="visita.Veterinario.Id" name = "veterinarioId">
+            <option value="0">Seleccione un Veterinario</option>
+            @foreach (var veterinario in Model.listaVeterinarios)
+            {
+                <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos</option>
+            }
+        </select>
 
         <button type="submit" class="boton-veterinario">Grabar</button>
     </div>
