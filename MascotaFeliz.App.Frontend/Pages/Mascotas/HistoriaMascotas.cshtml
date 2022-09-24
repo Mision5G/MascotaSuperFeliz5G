@@ -2,3 +2,53 @@
 @model MascotaFeliz.App.Frontend.Pages.HistoriaMascotasModel
 @{
 }
+
+<h1>Historia clínica</h1>
+
+<div>
+    Id: @Model.historia.Id
+</div>
+
+<div>
+    Fecha inicial: @Model.historia.FechaInicial
+</div>
+
+<div>
+    Lista: @Model.historia.VisitasPyP
+</div>
+
+<h1>Listado de Visitas</h1>
+<table class="Table" id="tbl_Visitas">
+<thead>
+    <tr>
+    <th>Fecha Inicial</th>
+    <th>Temperatura</th>
+    <th>Peso</th>
+    <th>Frecuencia Respiratoria</th>
+    <th>Frecuencia Cardiaca</th>
+    <th>Estado de ánimo</th>
+    <th>Recomendaciones</th>
+       
+    </tr>
+</thead>
+<tbody>
+
+@foreach (var VisitaPyP in Model.listadoVisitas )
+{
+    <tr>
+
+        <td> @VisitaPyP.FechaVisita </td>
+        <td> @VisitaPyP.Temperatura </td> 
+        <td> @VisitaPyP.Peso</td>
+        <td> @VisitaPyP.FrecuenciaRespiratoria</td>
+        <td> @VisitaPyP.FrecuenciaCardiaca</td>
+        <td> @VisitaPyP.Recomendaciones</td>
+
+       
+    </tr>
+}
+</tbody>
+</table>
+
+
+<a asp-page="./ListaMascotas" class="btn-default">Lista de Mascotas </a>

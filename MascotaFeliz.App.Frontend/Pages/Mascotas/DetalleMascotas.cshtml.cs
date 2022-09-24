@@ -16,19 +16,22 @@ namespace MascotaFeliz.App.Frontend.Pages
         private readonly IRepositorioVeterinario _repoVeterinario; 
         public Veterinario veterinario {get;set;}
         public Mascota mascota {get;set;}
-        public Dueno dueno{get;set;}
+        public Dueno dueno {get;set;}
+       
         
         public DetalleMascotasModel()
         {
             this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());
             this._repoDueno = new RepositorioDueno(new Persistencia.AppContext());
             this._repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+           
+            
         }
         public IActionResult OnGet(int mascotaId)
         {
+           
             mascota = _repoMascota.GetMascota(mascotaId);
-           // _repoDueno.GetDueno();
-           // _repoVeterinario.GetDueno();
+   
             if (mascota == null)
             {
                 return RedirectToPage("./NotFound");

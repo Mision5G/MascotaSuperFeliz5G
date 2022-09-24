@@ -40,29 +40,40 @@ namespace MascotaFeliz.App.Persistencia
             _appContext.Historias.Remove(historiaEncontrada);
             _appContext.SaveChanges();
         }
-/*
-       public IEnumerable<Historia> GetAllHistorias()
-        {
-            return GetAllHistorias_();
-        }
 
-        public IEnumerable<Historia> GetHistoriasPorFiltro(string filtro)
-        {
-            var historia = GetAllHistorias(); // Obtiene todos los saludos
-            if (historia != null)  //Si se tienen saludos
-            {
-                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
-                {
-                    historia = historia.Where(h => h.Nombres.Contains(filtro));
-                }
-            }
-            return historia;
-        }
-        public IEnumerable<Historia> GetAllHistorias_()
+       public IEnumerable<Historia> GetAllHistorias()
         {
             return _appContext.Historias;
         }
-*/
+
+       /* public IEnumerable<Historia> GetListadoVisitasPorHistoria(int idHistoria)
+        {
+            var historiaEncontrada = GetHistoria(idHistoria);
+            if (historiaEncontrada != null)  //Si se tienen saludos
+            {                
+                
+                foreach ( IEnumerable<Historia> visitaPyP in historiaEncontrada)
+                {
+                    return visitaPyP;
+                }       
+            }
+            return visitaPyP;
+        }*/
+
+        /* public IEnumerable<Mascota> GetMascotasPorFiltro(string filtro)
+        {
+            var Mascotas = GetAllMascotas(); // Obtiene todos los saludos
+            if (Mascotas != null)  //Si se tienen saludos
+            {
+                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
+                {
+                    Mascotas = Mascotas.Where(s => s.Nombre.Contains(filtro));
+                }
+            }
+            return Mascotas;
+        }*/
+       
+
         public Historia GetHistoria(int idHistoria)
         {
             return _appContext.Historias.FirstOrDefault(h => h.Id == idHistoria);

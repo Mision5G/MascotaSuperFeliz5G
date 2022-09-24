@@ -41,20 +41,27 @@ namespace MascotaFeliz.App.Consola
            //ListarMascotas();
            //BuscarMascota(1);
            //EditarMascota(6);
-            //EliminarMascota(3);
+            
+           // EliminarMascota(1);
+            
             //AsignarVeterinario();
             //AsignarDueno();
             //AsignarHistoria();
 
 
         //AddHistoria();
-        //AsignarVisitasPyP();
+        AsignarVisitasPyP();
+       // ListarVisitasHistoria();
             
 
         //AddVisitaPyP(); 
+        //AddVisitaPyP(); 
+        //  AddVisitaPyP(); 
+        //   AddVisitaPyP(); 
+         //   AddVisitaPyP(); 
            //EliminarVisitaPyP(1);
            //EditarVisitaPyP(3);
-          AsignarVet_to_VPyP();
+         // AsignarVet_to_VPyP();
 
             
 
@@ -128,7 +135,7 @@ namespace MascotaFeliz.App.Consola
 
         private static void AsignarVisitasPyP()
         {
-           var VisitaPyP= _repoHistoria.AsignarVisitaPyP(3,5);
+           var VisitaPyP= _repoHistoria.AsignarVisitaPyP(7,1);
             Console.WriteLine(VisitaPyP.FechaVisita);
            /* var historia = _repoHistoria.GetHistoria(idHistoria);
             if (historia != null)
@@ -166,7 +173,7 @@ namespace MascotaFeliz.App.Consola
         }
        private static void AsignarVet_to_VPyP()
         {
-            var veterinario = _repoVisitaPyP.AsignarVeterinario(2,2);
+            var veterinario = _repoVisitaPyP.AsignarVeterinario(1,2);
             Console.WriteLine(veterinario.Nombres + " " + veterinario.Apellidos);
         }
 
@@ -218,7 +225,22 @@ namespace MascotaFeliz.App.Consola
 
         }
 
-        private static void ListarMascotasFiltro()
+        
+      /*  private static void ListarVisitasHistoria()
+        {
+            var historiaVisitas = _repoHistoria.GetListadoVisitasPorHistoria(1);
+            foreach (Historia h in historiaVisitas)
+            {
+                Console.WriteLine(h.Recomendaciones + " " + h.Temperatura);
+            }
+
+        }*/
+
+
+
+
+
+    /*    private static void ListarMascotasFiltro()
         {
             var mascotasF = _repoMascota.GetMascotasPorFiltro("Mul");
             foreach (Mascota m in mascotasF)
@@ -236,7 +258,7 @@ namespace MascotaFeliz.App.Consola
                 Console.WriteLine(p.Nombres + " " + p.Apellidos);
             }
 
-        }
+        }*/
 
 
 // LISTAR TODOS

@@ -11,7 +11,7 @@ namespace MascotaFeliz.App.Frontend.Pages
 {
     public class AgregarVisitaModel : PageModel
     {
-        private readonly IRepositorioVisitaPyP _repoVisitaPyP;
+      /*  private readonly IRepositorioVisitaPyP _repoVisitaPyP;
         private readonly IRepositorioVeterinario _repoVeterinario;
         private readonly IRepositorioHistoria _repoHistoria;
         private readonly IRepositorioMascota _repoMascota;
@@ -68,7 +68,7 @@ namespace MascotaFeliz.App.Frontend.Pages
                 return Page();
             }
             
-        }
+        }*/
     }
 }
 

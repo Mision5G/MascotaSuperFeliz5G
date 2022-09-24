@@ -15,6 +15,7 @@
     <th>Datos</th>
     <th>Editar</th>
     <th>Historia</th>
+    <th>Agregar visita</th>
     
     </tr>
 </thead>
@@ -40,14 +41,13 @@
             </a>
         </td>
         <td>
-            <a class="fa-solid fa-book-medical" asp-page="./HistoriaMascotas" asp-route-mascotaId="@Mascota.Id">
+            <a class="fa-solid fa-book-medical" asp-page="./HistoriaMascotas" asp-route-historiaId="@Mascota.Historia.Id">
                     
             </a>
         </td>
-        
     </tr>
 }
 </tbody>
 </table>
 
-<a href="./EditarMascotas" class="boton-veterinario">Editar Mascota</a>
+<a href="./EditarMascotas" class="boton-veterinario">Agregar Mascota</a>
