@@ -16,7 +16,7 @@ namespace MascotaFeliz.App.Frontend.Pages
         private readonly IRepositorioVeterinario _repoVeterinario;
         private readonly IRepositorioHistoria _repoHistoria;
         [BindProperty]
-       // public static DateTime FechaInicial {get; set;}
+        public static DateTime FechaInicial {get; set;}
         //public static DateTime Today { get; }
        // DataTime FechaInicial;
         public Historia historia {get;set;}
@@ -74,7 +74,7 @@ namespace MascotaFeliz.App.Frontend.Pages
                    // historia = new Historia {FechaInicial = new DateTime.Today};
                     historia = new Historia
                     {
-                    FechaInicial= new DateTime(2222, 2, 28)
+                    FechaInicial= DateTime.Today
                     };
                     historia = _repoHistoria.AddHistoria(historia);
                     mascota = _repoMascota.AddMascota(mascota);

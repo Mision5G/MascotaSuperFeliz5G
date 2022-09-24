@@ -41,9 +41,9 @@ namespace MascotaFeliz.App.Consola
            //ListarMascotas();
            //BuscarMascota(1);
            //EditarMascota(6);
-            //EliminarMascota(1);
-            AsignarVeterinario();
-            AsignarDueno();
+            EliminarMascota(3);
+            //AsignarVeterinario();
+            //AsignarDueno();
             //AsignarHistoria();
 
 
