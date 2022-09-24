@@ -31,14 +31,12 @@ namespace MascotaFeliz.App.Frontend.Pages
 
         public IActionResult OnGet(int historiaId)
         {   
-            
-
             if (historiaId> 0)
             {
-               historia = _repoHistoria.GetHistoria(historiaId); 
-               listadoVisitas = historia.VisitasPyP;
-              
-               //listadoVisitas = _repoVisitaPyP.GetVisitaPorHistoria(historiaId);
+               //historia = _repoHistoria.GetHistoria(historiaId); 
+
+               listadoVisitas = _repoHistoria.GetListadoVisitasPorHistoria(historiaId);
+               //listadoVisitas = _repoVisitaPyP.GetAllVisitas();
                return Page();
             }
             else

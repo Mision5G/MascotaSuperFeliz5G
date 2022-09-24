@@ -46,19 +46,24 @@ namespace MascotaFeliz.App.Persistencia
             return _appContext.Historias;
         }
 
-       /* public IEnumerable<Historia> GetListadoVisitasPorHistoria(int idHistoria)
+        public IEnumerable<VisitaPyP> GetListadoVisitasPorHistoria(int idHistoria)
         {
             var historiaEncontrada = GetHistoria(idHistoria);
             if (historiaEncontrada != null)  //Si se tienen saludos
             {                
                 
-                foreach ( IEnumerable<Historia> visitaPyP in historiaEncontrada)
+                /*foreach ( IEnumerable<Historia> visitaPyP in historiaEncontrada)
                 {
                     return visitaPyP;
-                }       
+                } */     
+                return historiaEncontrada.VisitasPyP; 
             }
-            return visitaPyP;
-        }*/
+            else{
+                return null;
+            }
+
+           
+        }
 
         /* public IEnumerable<Mascota> GetMascotasPorFiltro(string filtro)
         {
@@ -76,7 +81,7 @@ namespace MascotaFeliz.App.Persistencia
 
         public Historia GetHistoria(int idHistoria)
         {
-            return _appContext.Historias.FirstOrDefault(h => h.Id == idHistoria);
+            return _appContext.Historias.Include("VisitaPyP").FirstOrDefault(h => h.Id == idHistoria);
         }
 
         public Historia UpdateHistoria(Historia historia)

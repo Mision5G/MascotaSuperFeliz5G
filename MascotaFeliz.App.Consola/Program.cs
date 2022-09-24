@@ -50,8 +50,9 @@ namespace MascotaFeliz.App.Consola
 
 
         //AddHistoria();
-        AsignarVisitasPyP();
+    //AsignarVisitasPyP();
        // ListarVisitasHistoria();
+       Listar_visitas();
             
 
         //AddVisitaPyP(); 
@@ -135,7 +136,7 @@ namespace MascotaFeliz.App.Consola
 
         private static void AsignarVisitasPyP()
         {
-           var VisitaPyP= _repoHistoria.AsignarVisitaPyP(7,1);
+           var VisitaPyP= _repoHistoria.AsignarVisitaPyP(2,3);
             Console.WriteLine(VisitaPyP.FechaVisita);
            /* var historia = _repoHistoria.GetHistoria(idHistoria);
             if (historia != null)
@@ -224,6 +225,11 @@ namespace MascotaFeliz.App.Consola
             }
 
         }
+        private static void Visita_por_historia(int idHistoria)
+        {
+            var visitas = _repoVisitaPyP.GetListadoVisitasPorHistoria(int idHistoria)
+
+        }
 
         
       /*  private static void ListarVisitasHistoria()
@@ -270,7 +276,13 @@ namespace MascotaFeliz.App.Consola
             }
         }
 
-        
+        private static void Listar_visitas(){
+
+            var VisitasPyP = _repoVisitaPyP.GetAllVisitas();
+            foreach(VisitaPyP vit in VisitasPyP){
+                Console.WriteLine(vit.Recomendaciones);
+            }
+        }
 
         private static void ListarDuenos(){
             var duenos = _repoDueno.GetAllDuenos();
