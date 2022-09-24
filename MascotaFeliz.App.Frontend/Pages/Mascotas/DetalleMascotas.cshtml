@@ -21,5 +21,11 @@
 <div>
     Raza: @Model.mascota.Raza
 </div>
+<div>
+    Dueño: @Model.mascota.Dueno.Nombres @Model.mascota.Dueno.Apellidos @Model.mascota.Dueno.Cedula
+</div>
+<div>
+    Veterinario: @Model.mascota.Veterinario.Nombres @Model.mascota.Veterinario.Apellidos @Model.mascota.Veterinario.Cedula
+</div>
 
 <a asp-page="./ListaMascotas" class="btn-default">Lista de Mascotas </a>

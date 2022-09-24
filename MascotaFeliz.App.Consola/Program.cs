@@ -44,7 +44,7 @@ namespace MascotaFeliz.App.Consola
             //EliminarMascota(1);
             AsignarVeterinario();
             AsignarDueno();
-            AsignarHistoria();
+            //AsignarHistoria();
 
 
         //AddHistoria();
@@ -149,7 +149,7 @@ namespace MascotaFeliz.App.Consola
 
        private static void AsignarVeterinario()
         {
-            var veterinario = _repoMascota.AsignarVeterinario(2, 3);
+            var veterinario = _repoMascota.AsignarVeterinario(2, 2);
             Console.WriteLine(veterinario.Nombres + " " + veterinario.Apellidos);
         }
 
