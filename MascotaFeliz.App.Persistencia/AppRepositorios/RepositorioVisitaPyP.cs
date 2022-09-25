@@ -82,11 +82,22 @@ namespace MascotaFeliz.App.Persistencia
             if (VisitaPyPEncontrada != null)
             {
                 VisitaPyPEncontrada.FechaVisita= visitaPyP.FechaVisita;
-                             
+                VisitaPyPEncontrada.Temperatura= visitaPyP.Temperatura;
+                VisitaPyPEncontrada.Peso= visitaPyP.Peso;
+                VisitaPyPEncontrada.FrecuenciaRespiratoria= visitaPyP.FrecuenciaRespiratoria;
+                VisitaPyPEncontrada.FrecuenciaCardiaca= visitaPyP.FrecuenciaCardiaca;
+                VisitaPyPEncontrada.EstadoAnimo= visitaPyP.EstadoAnimo;
+                VisitaPyPEncontrada.Recomendaciones= visitaPyP.Recomendaciones;
+                VisitaPyPEncontrada.Veterinario= visitaPyP.Veterinario;
+
                 _appContext.SaveChanges();
             }
             return VisitaPyPEncontrada;
         } 
+
+
+
+
         public Veterinario AsignarVeterinario(int idVisitaPyP, int idVeterinario)
         {
             var VisitaPyPEncontrada = _appContext.VisitasPyP.FirstOrDefault(m => m.Id == idVisitaPyP);

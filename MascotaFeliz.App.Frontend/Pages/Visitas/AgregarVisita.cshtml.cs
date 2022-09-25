@@ -11,7 +11,7 @@ namespace MascotaFeliz.App.Frontend.Pages
 {
     public class AgregarVisitaModel : PageModel
     {
-      /*  private readonly IRepositorioVisitaPyP _repoVisitaPyP;
+        private readonly IRepositorioVisitaPyP _repoVisitaPyP;
         private readonly IRepositorioVeterinario _repoVeterinario;
         private readonly IRepositorioHistoria _repoHistoria;
         private readonly IRepositorioMascota _repoMascota;
@@ -31,7 +31,7 @@ namespace MascotaFeliz.App.Frontend.Pages
             this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());           
         }
 
-        public IActionResult OnGet(int? visitaId){
+        public void OnGet(int? visitaId){
             listaVeterinarios = _repoVeterinario.GetAllVeterinarios();
 
             if (visitaId.HasValue){
@@ -41,34 +41,36 @@ namespace MascotaFeliz.App.Frontend.Pages
                 visita = new VisitaPyP();
             }
             if (visita == null){
-                return RedirectToPage("./NotFound");
+                 RedirectToPage("./NotFound");
             }
-            return Page();
+                Page();
         }
 
         public IActionResult OnPost(VisitaPyP visita , int veterinarioId){
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
                 {
                     veterinario = _repoVeterinario.GetVeterinario(veterinarioId);
-                    Console.WriteLine(veterinarioId);
+                    
                 if (visita.Id > 0)
                     {
-                        visita.Veterinario= veterinario;
+                        visita.Veterinario = veterinario;
                         visita = _repoVisitaPyP.UpdateVisitaPyP(visita);
                     }
                 else
                     {
-                        visita = _repoVisitaPyP.AddVisitaPyP(visita);   
+                        visita = _repoVisitaPyP.AddVisitaPyP(visita); 
+
                         _repoVisitaPyP.AsignarVeterinario(visita.Id,veterinario.Id);        
                     }
                     return RedirectToPage("/Mascotas/ListaMascotas");
                    
             }
-            else{
+            else
+            {
                 return Page();
             }
             
-        }*/
+        }
     }
 }
 

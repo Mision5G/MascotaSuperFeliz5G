@@ -3,8 +3,9 @@
 @{
 }
 <h2>Agregar o editar Visita</h2>
-@*
+
 <form method="post" >
+    
     <div class="form-group">
         <input type="hidden" asp-for = "visita.Id" />
         <label asp-for="visita.FechaVisita"></label>
@@ -24,7 +25,7 @@
 
         <label for="veterinario">Veterinario</label>
         <select id="veterinario" asp-for="visita.Veterinario.Id" name = "veterinarioId">
-            <option value="0">Seleccione un Veterinario</option>
+            <option value="">Seleccione un Veterinario</option>
             @foreach (var veterinario in Model.listaVeterinarios)
             {
                 <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos</option>
@@ -37,5 +38,4 @@
 </form>
 
 <a asp-page="./ListaMascotas" class="boton-veterinario">Lista de Mascotas </a>
-*@
 
