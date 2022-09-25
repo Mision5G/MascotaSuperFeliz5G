@@ -268,7 +268,7 @@ header{
 .Table{
   width: 100%;
   border-collapse: collapse;
-  padding: 0px 0px ;
+  padding: 0px 50px ;
   border: 1px solid darkgray;
   margin: 0px;
   table-layout: fixed;
@@ -282,11 +282,11 @@ header{
 .Table tr{
   background-color:darkgray;
   border: 3px solid white;
-  text-align: center;
+
 }
 
 .Table th,Table td{
-  font-size: 12px;
+  font-size: 10px;
   padding: 12px;
   text-align: center;
 
@@ -296,7 +296,7 @@ header{
   text-transform:uppercase;
   color: white;
   cursor: pointer;
-  text-align: center;
+  
   transition: 0.4s;
 }
 
