@@ -13,10 +13,6 @@
     Fecha inicial: @Model.historia.FechaInicial
 </div>
 
-<div>
-    Lista: @Model.historia.VisitasPyP
-</div>
-
 <h1>Listado de Visitas</h1>
 <table class="Table" id="tbl_Visitas">
 <thead>
@@ -28,12 +24,13 @@
     <th>Frecuencia Cardiaca</th>
     <th>Estado de ánimo</th>
     <th>Recomendaciones</th>
+    <th>Veterinario</th>
        
     </tr>
 </thead>
 <tbody>
 
-@foreach (var VisitaPyP in Model.listadoVisitas )
+@foreach (var VisitaPyP in Model.listadoVisitas)
 {
     <tr>
 
@@ -42,13 +39,19 @@
         <td> @VisitaPyP.Peso</td>
         <td> @VisitaPyP.FrecuenciaRespiratoria</td>
         <td> @VisitaPyP.FrecuenciaCardiaca</td>
+        <td> @VisitaPyP.EstadoAnimo</td>
         <td> @VisitaPyP.Recomendaciones</td>
+        <td> @VisitaPyP.Veterinario.Nombres</td>
 
        
     </tr>
 }
 </tbody>
 </table>
+
+
+
+
 
 
 <a asp-page="./ListaMascotas" class="btn-default">Lista de Mascotas </a>

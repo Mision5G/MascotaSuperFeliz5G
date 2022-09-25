@@ -64,6 +64,31 @@ namespace MascotaFeliz.App.Persistencia
 
            
         }
+       
+
+        public IEnumerable<VisitaPyP> GetVisitaHistoria(int idHistoria)
+        {
+
+
+            var historia = _appContext.Historias.Where(v => v.Id == idHistoria).Include(v => v.VisitasPyP).ThenInclude(VisitasPyP => VisitasPyP.Veterinario).FirstOrDefault();
+            return historia.VisitasPyP;
+        }     
+              /*using (var context = new BloggingContext())
+{
+    var blogs = context.Blogs
+        .Include(blog => blog.Posts)
+        .ThenInclude(post => post.Author)
+        .ToList();
+}*/       
+            
+            
+        
+
+
+
+
+
+
 
         /* public IEnumerable<Mascota> GetMascotasPorFiltro(string filtro)
         {
