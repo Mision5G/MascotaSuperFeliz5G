@@ -33,10 +33,10 @@ namespace MascotaFeliz.App.Frontend.Pages
         {   
             if (historiaId> 0)
             {
-               //historia = _repoHistoria.GetHistoria(historiaId); 
+               historia = _repoHistoria.GetHistoria(historiaId); 
 
-               listadoVisitas = _repoHistoria.GetListadoVisitasPorHistoria(historiaId);
-               //listadoVisitas = _repoVisitaPyP.GetAllVisitas();
+               //listadoVisitas = _repoHistoria.GetListadoVisitasPorHistoria(historiaId);
+               listadoVisitas = _repoVisitaPyP.GetAllVisitas();
                return Page();
             }
             else
