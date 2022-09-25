@@ -140,6 +140,15 @@ header{
 
 }
 
+#banner-Mascotas-visita{
+  padding: 0 50px;
+  background-image:url(freeee.jpg);
+  height: 40vh;
+  background-position: center;
+  background-size: cover;
+
+}
+
 
 .Contenido-banner{
 
