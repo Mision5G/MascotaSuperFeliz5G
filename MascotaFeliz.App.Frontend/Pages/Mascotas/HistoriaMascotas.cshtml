@@ -9,7 +9,7 @@
   </section>
   
 <div>
-    Fecha inicial: @Model.historia.FechaInicial
+    Fecha de creación: @Model.historia.FechaInicial
 </div>
 
 
@@ -54,6 +54,10 @@
 </tbody>
 </table>
 
-<a href="/Visitas/AgregarVisita" class="boton-veterinario">Agregar Visita</a>
+<td>
+        <a class="boton-veterinario" asp-page="/Visitas/AgregarVisita" asp-route-historiaId="@Model.historia.Id"
+            >Agregar Visita        
+            </a>
+        </td>
 
 <a asp-page="./ListaMascotas" class="fa-solid fa-arrow-rotate-left" id="BA"> </a>
