@@ -51,7 +51,7 @@ namespace MascotaFeliz.App.Frontend.Pages
             else
             {
                
-               return RedirectToPage("./ListaMascotas");
+               return RedirectToPage("./HistoriaMascotas");
             }
         }
     }

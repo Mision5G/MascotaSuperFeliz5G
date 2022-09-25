@@ -37,7 +37,8 @@ namespace MascotaFeliz.App.Frontend.Pages
             if (visitaId.HasValue){
                 visita = _repoVisitaPyP.GetVisitaPyP(visitaId.Value);
             }
-            else{
+            else
+            {
                 visita = new VisitaPyP();
             }
             if (visita == null){
@@ -62,7 +63,7 @@ namespace MascotaFeliz.App.Frontend.Pages
 
                         _repoVisitaPyP.AsignarVeterinario(visita.Id,veterinario.Id);        
                     }
-                    return RedirectToPage("/Mascotas/ListaMascotas");
+                    return RedirectToPage("/Mascotas/HistoriaMascotas");
                    
             }
             else
