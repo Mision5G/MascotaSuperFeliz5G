@@ -47,7 +47,7 @@ namespace MascotaFeliz.App.Frontend.Pages
                 Page();
         }
 
-        public IActionResult OnPost(VisitaPyP visita , int veterinarioId){
+        public IActionResult OnPost(VisitaPyP visita , int veterinarioId, int historiaId){
             if (ModelState.IsValid)
                 {
                     veterinario = _repoVeterinario.GetVeterinario(veterinarioId);
@@ -59,11 +59,13 @@ namespace MascotaFeliz.App.Frontend.Pages
                     }
                 else
                     {
+                        historia = _repoHistoria.GetHistoria(historiaId);
                         visita = _repoVisitaPyP.AddVisitaPyP(visita); 
 
-                        _repoVisitaPyP.AsignarVeterinario(visita.Id,veterinario.Id);        
+                        _repoVisitaPyP.AsignarVeterinario(visita.Id,veterinario.Id);
+                        _repoHistoria.AsignarVisitaPyP(historia.Id, visita.Id);        
                     }
-                    return RedirectToPage("/Mascotas/HistoriaMascotas");
+                    return RedirectToPage("/Mascotas/ListaMascotas");
                    
             }
             else

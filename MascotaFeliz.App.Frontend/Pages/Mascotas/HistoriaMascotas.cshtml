@@ -6,10 +6,6 @@
 <h1>Historia clínica</h1>
 
 <div>
-    Id: @Model.historia.Id
-</div>
-
-<div>
     Fecha inicial: @Model.historia.FechaInicial
 </div>
 
@@ -25,6 +21,8 @@
     <th>Estado de ánimo</th>
     <th>Recomendaciones</th>
     <th>Veterinario</th>
+    <th>Editar</th>
+
        
     </tr>
 </thead>
@@ -53,11 +51,10 @@
 }
 </tbody>
 </table>
-
-<a href="/Visitas/AgregarVisita" class="boton-veterinario">Agregar Visita</a>
-
-
-
-
+<td>
+        <a class="fa-solid fa-book-medical" asp-page="/Visitas/AgregarVisita" asp-route-historiaId="@Model.historia.Id">
+                    
+            </a>
+</td> 
 
 <a asp-page="./ListaMascotas" class="btn-default">Lista de Mascotas </a>
