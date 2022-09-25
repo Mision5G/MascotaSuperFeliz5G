@@ -7,7 +7,6 @@
 <form method="post" >
     <div class="form-group">
         <input type="hidden" asp-for = "mascota.Id" />
-        
         <label asp-for="mascota.Nombre"></label>
         <input asp-for="mascota.Nombre" class="form-control">
         <label asp-for="mascota.Color"></label>
@@ -16,6 +15,8 @@
         <input asp-for="mascota.Raza" class="form-control">
         <label asp-for="mascota.Especie"></label>
         <input asp-for="mascota.Especie" class="form-control">
+        
+
         
         <label for="dueno">Dueño</label>
         <select id="dueno" asp-for="mascota.Dueno.Id" name = "duenoId">
@@ -39,4 +40,5 @@
     </div>
 </form>
 
-<a asp-page="./ListaMascotas" class="btn-default">Lista de Mascotas </a>
+<a asp-page="./ListaMascotas" class="fa-solid fa-arrow-rotate-left" id="BA"> </a>
+
