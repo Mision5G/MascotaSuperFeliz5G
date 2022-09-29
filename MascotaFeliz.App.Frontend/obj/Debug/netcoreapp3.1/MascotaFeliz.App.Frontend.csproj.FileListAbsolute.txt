@@ -181,3 +181,4 @@ C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.
 =======
 >>>>>>> 58974189dd4d522645e74e9ba2f4d333d42bf05e
 C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Visitas\AgregarVisita.cshtml.g.cs
+C:\Mascotas\MascotaSuperFeliz5G\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Visitas\EditarHistoria.cshtml.g.cs

@@ -31,49 +31,45 @@ namespace MascotaFeliz.App.Frontend.Pages
             this._repoMascota = new RepositorioMascota(new Persistencia.AppContext());           
         }
 
-        public void OnGet(int? visitaId){
+        public void OnGet(int? historiaId){
+
             listaVeterinarios = _repoVeterinario.GetAllVeterinarios();
 
-            if (visitaId.HasValue){
-                visita = _repoVisitaPyP.GetVisitaPyP(visitaId.Value);
+            if (historiaId.HasValue)
+            {
+                historia =  _repoHistoria.GetHistoria(historiaId.Value);
+                visita = new VisitaPyP();
+                Page();
+                Console.WriteLine(historia.Id); 
+
             }
             else
             {
-                visita = new VisitaPyP();
+                RedirectToPage("./NotFound");
             }
-            if (visita == null){
-                 RedirectToPage("./NotFound");
-            }
-                Page();
+                
         }
 
-        public IActionResult OnPost(VisitaPyP visita , int veterinarioId, int historiaId){
+        public IActionResult OnPost(VisitaPyP visita , int veterinarioId, int historiaId)
+        {
             if (ModelState.IsValid)
                 {
                     veterinario = _repoVeterinario.GetVeterinario(veterinarioId);
-                    
-                if (visita.Id > 0)
-                    {
-                        visita.Veterinario = veterinario;
-                        visita = _repoVisitaPyP.UpdateVisitaPyP(visita);
-                    }
-                else
-                    {
-                        historia = _repoHistoria.GetHistoria(historiaId);
-                        visita = _repoVisitaPyP.AddVisitaPyP(visita); 
+                    historia = _repoHistoria.GetHistoria(historiaId);
+                    visita = _repoVisitaPyP.AddVisitaPyP(visita); 
+                    _repoVisitaPyP.AsignarVeterinario(visita.Id, veterinario.Id);
+                    _repoHistoria.AsignarVisitaPyP(historia.Id, visita.Id);  
 
-                        _repoVisitaPyP.AsignarVeterinario(visita.Id,veterinario.Id);
-                        _repoHistoria.AsignarVisitaPyP(historia.Id, visita.Id);        
-                    }
-                    return RedirectToPage("/Mascotas/ListaMascotas");
-                   
-            }
+                    return Page();      
+                }
             else
-            {
-                return Page();
-            }
-            
-        }
+                {
+                return RedirectToPage("/Mascotas/ListaMascotas");
+                }
+                    
+                   
+        }      
     }
 }
+
 

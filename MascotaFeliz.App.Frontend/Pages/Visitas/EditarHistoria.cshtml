@@ -1,0 +1,42 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.EditarHistoriaModel
+@{
+}
+<h2>Editar</h2>
+
+<form method="post" >
+    
+    <div class="form-group">
+        <label asp-for="@Model.visita.Id"></label>
+        <input asp-for="@Model.visita.Id" class="form-control">
+        <label asp-for="@Model.visita.FechaVisita"></label>
+        <input asp-for="@Model.visita.FechaVisita" class="form-control">
+        <label asp-for="@Model.visita.Temperatura"></label>
+        <input asp-for="@Model.visita.Temperatura" class="form-control">
+        <label asp-for="@Model.visita.Peso"></label>
+        <input asp-for="@Model.visita.Peso" class="form-control">
+        <label asp-for="@Model.visita.FrecuenciaRespiratoria"></label>
+        <input asp-for="@Model.visita.FrecuenciaRespiratoria" class="form-control">
+        <label asp-for="@Model.visita.FrecuenciaCardiaca"></label>
+        <input asp-for="@Model.visita.FrecuenciaCardiaca" class="form-control">
+        <label asp-for="@Model.visita.EstadoAnimo"></label>
+        <input asp-for="@Model.visita.EstadoAnimo" class="form-control">
+        <label asp-for="@Model.visita.Recomendaciones"></label>
+        <input asp-for="@Model.visita.Recomendaciones" class="form-control">
+
+        <label for="veterinario">Veterinario</label>
+        <select id="veterinario" asp-for="@Model.visita.Veterinario.Id" name = "veterinarioId">
+            <option value="">Seleccione un Veterinario</option>
+            @foreach (var veterinario in Model.listaVeterinarios)
+            {
+                <option value="@veterinario.Id">@veterinario.Nombres @veterinario.Apellidos</option>
+            }
+        </select>
+
+        <button type="submit" class="boton-veterinario">Grabar</button>
+    </div>
+
+</form>
+
+<a asp-page="./ListaMascotas" class="boton-veterinario">Lista de Mascotas </a>
+

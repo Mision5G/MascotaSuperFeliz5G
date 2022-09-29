@@ -38,7 +38,7 @@ namespace MascotaFeliz.App.Persistencia
         }
         public VisitaPyP GetVisitaPyP(int idVisitaPyP)
         {
-            return _appContext.VisitasPyP.FirstOrDefault();
+            return _appContext.VisitasPyP.Include("Veterinario").FirstOrDefault(d => d.Id == idVisitaPyP);
         }
 
         public IEnumerable<VisitaPyP> GetAllVisitas()
